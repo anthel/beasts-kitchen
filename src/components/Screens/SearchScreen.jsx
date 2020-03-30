@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState } from 'react';
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -53,15 +53,9 @@ const useStyles = makeStyles(theme => ({
 export default function SearchScreen() {
   const classes = useStyles();
 
-  const [inputValue, setInputValue] = useState(null);
+  const [inputValue, setInputValue] = useState('');
 
-  fetch('https://api.spoonacular.com/recipes/search?query=' + inputValue)
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-    })
+  
 
   return (
     <React.Fragment>
@@ -79,7 +73,7 @@ export default function SearchScreen() {
             console.log(event.target.value);
           }}
         />
-        <IconButton type="submit" className={classes.iconButton} aria-label="search">
+        <IconButton type="submit" className={classes.iconButton} onClick={sendSearchRequest(inputValue)} aria-label="search">
           
         </IconButton>
         <Divider className={classes.divider} orientation="vertical" />
@@ -88,7 +82,7 @@ export default function SearchScreen() {
         </IconButton>
       </Paper>
       <div className={classes.chipSection}>
-        <Chip label="Clickable Link" component="SearchScreen" href="#chip" className={classes.chipOne} clickable />
+        <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipOne} clickable />
         <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipTwo} clickable />
         <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipThree} clickable />
         <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipFour} clickable />
@@ -103,4 +97,19 @@ export default function SearchScreen() {
       </div>
     </React.Fragment>
   );
+}
+
+function sendSearchRequest(inputValue) {
+
+  const apiKey = 'apiKey=7e966aa4956a4e908dcc1e6276c1af38&';
+
+  const searchQuery = 'query=' + inputValue;
+
+  fetch('https://api.spoonacular.com/recipes/search?' + apiKey + searchQuery)
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+    })
 }
