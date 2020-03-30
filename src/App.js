@@ -13,6 +13,7 @@ import FooterContent from './components/FooterContent';
 
 function App() {
   return (
+<<<<<<< HEAD
     <div className="demo-big-content">
       <Layout>
           <Header title="Beast Kitchen!" scroll>
@@ -38,6 +39,10 @@ function App() {
           </Content>
       </Layout>
   </div>
+=======
+    <div>
+    </div>
+>>>>>>> 745030294061a7e5c038564ac1c48eec62d17c7e
   );
 }
 
