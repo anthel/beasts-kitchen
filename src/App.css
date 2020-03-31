@@ -11,7 +11,10 @@
 
 /* Styling for the footer */
 .footer-content{
+<<<<<<< HEAD
   position: fixed;
+=======
+>>>>>>> 696bb3a31d81d11bdfb5fd6aa1d4b6e0f09507df
   width: 100%;
   bottom: 0;
 }
