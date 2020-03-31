@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import SearchScreen from './components/Screens/SearchScreen';
+import Navigation from './components/Navigation';
 import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 import Routers from './components/Routers';
 import { Link } from 'react-router-dom';
@@ -11,9 +13,10 @@ import FooterContent from './components/FooterContent';
  * Content is where you call your other components for the application
  */
 
+
 function App() {
   return (
-<<<<<<< HEAD
+
     <div className="demo-big-content">
       <Layout>
           <Header title="Beast Kitchen!" scroll>
@@ -39,10 +42,7 @@ function App() {
           </Content>
       </Layout>
   </div>
-=======
-    <div>
-    </div>
->>>>>>> 745030294061a7e5c038564ac1c48eec62d17c7e
+
   );
 }
 
