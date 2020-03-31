@@ -6,7 +6,7 @@ import Search from './Screens/Search';
 
 const Routers = () => (
         <Switch>
-            <Route exact path="/" component={Home} />
+            {/* <Route exact path="/" component={Home} /> */}
             <Route path="/login" component={Login} />
             <Route path="/search" component={Search} />
         </Switch>

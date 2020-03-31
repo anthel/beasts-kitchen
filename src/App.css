@@ -21,4 +21,11 @@
     padding: 10px;
     font-size: 30px;
 }
+
+.flex-foot i:active{
+    opacity: .5;
+}
+.flex-foot i:hover{
+    cursor: pointer;
+}
 /*--- Styling footer ends here ----*/
