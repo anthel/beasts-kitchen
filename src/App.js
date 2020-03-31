@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import SearchScreen from './components/Screens/SearchScreen';
+import Navigation from './components/Navigation';
 import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 import Routers from './components/Routers';
 import { Link } from 'react-router-dom';
@@ -10,6 +12,7 @@ import FooterContent from './components/FooterContent';
  * Links are the "buttons" on the page, "Drawer" is the hamburger navigation.
  * Content is where you call your other components for the application
  */
+
 
 function App() {
   return (
