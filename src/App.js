@@ -6,7 +6,6 @@ import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 import HomeScreen from './components/Screens/HomeScreen';
 import Routers from './components/Routers';
 import { Link } from 'react-router-dom';
-import FooterContent from './components/FooterContent';
 
 /**
  * @description - Layout for the navigation (for both mobile and webpage)
@@ -35,9 +34,7 @@ function App() {
         {/* All the content is placed here */}
           <Content>
             <div className="page-content" />
-            <HomeScreen />
             <Routers />
-            <FooterContent />
           </Content>
 <<<<<<< HEAD
       </Layout>
