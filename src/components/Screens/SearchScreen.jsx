@@ -7,6 +7,8 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Chip from '@material-ui/core/Chip';
 
+// TODO: Add comments 
+
 const useStyles = makeStyles(theme => ({
   root: {
     padding: '2px 4px',
