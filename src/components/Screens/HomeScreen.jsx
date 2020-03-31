@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import HomePage from '../HomePage';
+import FooterContent from '../FooterContent';
 
 /**
  * @desc - this component represents the Home Page Screen.
@@ -7,7 +8,12 @@ import HomePage from '../HomePage';
  */
 class HomeScreen extends Component {
 	render() {
-		return <HomePage />
+		return (
+		<Fragment>
+			<HomePage />
+			<FooterContent/>
+		</Fragment>
+		)
 	}
 }
 
