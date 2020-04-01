@@ -1,0 +1,41 @@
+/* Cards for Carousel in Home Page */
+.card {
+  display: inline-block;
+  margin: 10px;
+}
+
+.card-title {
+  margin: -10px;
+}
+/*--- Styling for Cards ends here ----*/
+
+/* Styling for the footer */
+.footer-content{
+  width: 100%;
+  bottom: 0;
+}
+.footer-content h1 {
+  color: black;
+}
+.mdl-logo {
+  font-weight: bold;
+  font-size: 2em;
+  color: black;
+}
+.flex-foot{
+  display: flex;
+  justify-content: center;
+}
+
+.flex-foot i{
+  padding: 10px;
+  font-size: 30px;
+}
+
+.flex-foot i:active{
+  opacity: .5;
+}
+.flex-foot i:hover{
+  cursor: pointer;
+}
+/*--- Styling footer ends here ----*/
