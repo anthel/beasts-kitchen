@@ -10,7 +10,10 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 
 
-
+/**
+ * @desc Styling for component where root is the main styling, in this case margin between input fields.
+ * halfSize is used for the smaller input fields, i.e for firstname and lastname.
+ */
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -18,13 +21,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   halfSize: {
-    width: '17.3ch',
+    width: '17ch',
   },
   fullSize: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '15ch',
-    },
+    width: '36ch',
   }
 }));
 
@@ -63,9 +63,14 @@ export default function Registration() {
           className={classes.halfSize}
           />
       </FormControl>
-      <FormControl variant="outlined" fullWidth>
+      <FormControl variant="outlined" >
         <InputLabel htmlFor="register-email">Name</InputLabel>
-        <OutlinedInput id="register-email" value={firstname} onChange={handleChange} label="Name" />
+        <OutlinedInput id="register-email" 
+          value={firstname} 
+          onChange={handleChange} 
+          label="Name" 
+          className={classes.fullSize}
+          />
       </FormControl>
       </form>
     </Container>
