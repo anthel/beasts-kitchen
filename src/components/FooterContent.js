@@ -5,7 +5,13 @@ function FooterContent() {
   return (
     <div>
       <div className="footer-content">
-        <Footer size="mega" style={{backgroundColor: '#84C984', color: 'black'}}>
+        <Footer size="mega" 
+          style={{
+            backgroundColor: '#84C984', 
+            color: 'black',
+            height: '450px',
+            marginTop: '30px'
+          }}>
           <div className="flex-foot">
             <FooterSection type="bottom" style={{textAlign: 'center'}}>
               <h3 style={{fontWeight: 'bold'}}>Beast Kitchen</h3>
