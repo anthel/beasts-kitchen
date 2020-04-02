@@ -1,67 +1,28 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
 
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Chip from '@material-ui/core/Chip';
+import withStyles from '../HOCS/withStyles';
 
-const useStyles = makeStyles(theme => ({
 
-  // Root styling used for the form which contains input field
-  root: {
-    padding: '2px 4px',
-  },
-  input: {
-    marginLeft: theme.spacing(1),
-    flex: 1,
-    padding: 8,
-  },
-
-  // 4 different stylings for chips
-  chipOne: {
-    backgroundColor: 'rgba(79, 183, 0, 0.65)',
-    color: 'white',
-    margin: 5,
-  },
-  chipTwo: {
-    backgroundColor: 'rgba(108, 192, 24, 0.63)',
-    color: 'white',
-    margin: 5,
-  },
-  chipThree: {
-    backgroundColor: 'rgba(11, 145, 1, 0.68)',
-    color: 'white',
-    margin: 5,
-  },
-  chipFour: {
-    backgroundColor: 'rgba(74, 145, 20, 0.685)',
-    color: 'white',
-    margin: 5,
-  },
-  chipSection: {
-    margin: 5,
-  }
-}));
-
-export default function SearchScreen() {
-
-  const classes = useStyles();
+function SearchScreen(props) {
 
   const [inputValue, setInputValue] = useState('');
 
-  
+  const { classes } = props;
 
   return (
     <React.Fragment>
-      <Paper component="form" className={classes.root}>
+      <Paper component="form" className={classes.searchForm}>
        
         <SearchIcon fontSize="large"/>
 
         {/* Input field, search */}
         <InputBase
-          className={classes.input}
+          className={classes.searchInput}
           placeholder="Search..."
           value={inputValue}
           onChange={(event) => {
@@ -70,7 +31,7 @@ export default function SearchScreen() {
         />
         {/* Invisible submit button, search by pressing enter/ok */}
         <IconButton type="submit" 
-          className={classes.iconButton} 
+          
           onClick={(event)=>{sendSearchRequest(event,inputValue)}} 
         />
       </Paper>
@@ -90,6 +51,8 @@ export default function SearchScreen() {
     </React.Fragment>
   );
 }
+
+export default withStyles(SearchScreen);
 
 function sendSearchRequest(event, inputValue) {
 
