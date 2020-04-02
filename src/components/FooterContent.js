@@ -1,26 +1,24 @@
 import React from 'react'
 import { Footer ,FooterSection} from 'react-mdl';
+import withStyles from './HOCS/withStyles';
 
-function FooterContent() {
+function FooterContent(props) {
+
+  const { classes } = props;
+
   return (
     <div>
-      <div className="footer-content">
-        <Footer size="mega" 
-          style={{
-            backgroundColor: '#84C984', 
-            color: 'black',
-            height: '450px',
-            marginTop: '30px'
-          }}>
-          <div className="flex-foot">
-            <FooterSection type="bottom" style={{textAlign: 'center'}}>
-              <h3 style={{fontWeight: 'bold'}}>Beast Kitchen</h3>
+      <div className={classes.footerWrapper}>
+        <Footer size="mega" className={classes.footerContainer}>
+          <div className={classes.flexFoot}>
+            <FooterSection type="bottom" >
+              <h3 className={classes.footerBold}>Beast Kitchen</h3>
               <p>Beast Kitchen AB <br></br>
               <b>Call us at:</b> 00-000000-00 <br></br>
               <b>Or email us:</b> BeastKitchen@gmail.com</p>
 
-              <p style={{fontWeight: 'bold'}}>BeastKitchen.com</p>
-              <p style={{fontWeight: 'bold'}}>Follow us!</p>
+              <p className={classes.footerBold}>BeastKitchen.com</p>
+              <p className={classes.footerBold}>Follow us!</p>
               
               <i className="fa fa-facebook-square"/>
               <i className="fa fa-instagram"/>
@@ -34,4 +32,4 @@ function FooterContent() {
   )
 }
 
-export default FooterContent;
+export default withStyles(FooterContent);
