@@ -4,12 +4,14 @@ import Home from './Screens/HomeScreen';
 /* import Login from './Screens/Login'; */
 import Search from './Screens/SearchScreen';
 import Register from './Screens/Registration';
+import Login from './Login';
 
 const Routers = () => (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route path="/register" component={Register} />
     <Route path="/search" component={Search} />
+    <Route path="/login" component={Login} />
   </Switch>
 )
 
