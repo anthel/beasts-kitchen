@@ -55,8 +55,6 @@ function SearchScreen(props) {
 export default withStyles(SearchScreen);
 
 function sendSearchRequest(event, inputValue) {
-
-
   const apiKey = 'apiKey=7e966aa4956a4e908dcc1e6276c1af38&';
 
   const searchQuery = 'query=' + inputValue;

@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import withStyles from './HOCS/withStyles';
+
 /**
  * @desc - this component uses the Carousel from the npm package
  * 'react-multi-carousel'. Makes it responsive for desktop, tablet
@@ -10,9 +11,10 @@ import withStyles from './HOCS/withStyles';
  * and a title. 
  */
 class Weekly extends Component {
-	constructor(props) {
-		super(props);
-	}
+	// constructor(props) {
+	// 	super(props);
+	// }
+
   render() {
 		const { classes } = this.props;
 

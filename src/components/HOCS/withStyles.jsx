@@ -12,7 +12,6 @@ const styles = {
     padding: '2px 4px',
   },
   searchInput: {
-
     flex: 1,
     padding: 8,
   },
@@ -64,7 +63,6 @@ const styles = {
     fontSize: '13px',
     backgroundColor: '#84C984',
     color: '#fff',
-    border: 'none',
     margin: '10px',
     padding: '5px',
     borderRadius: '5px',
@@ -115,7 +113,26 @@ const styles = {
   },
   footerBold: {
     fontWeight: 'bold',
-  }
+  },
+
+  // Login styling
+  paper: {
+    marginTop: '70px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    backgroundColor: '#84C984',
+    margin: '10px',
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: '20px',
+  },
+  submit: {
+    margin: '10px 0 10px',
+  },
 };
 
 

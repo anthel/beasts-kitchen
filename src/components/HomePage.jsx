@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { Button } from '@material-ui/core';
 
-/* import styles from '../components/StyleModulesCss/Carousel.module.css'; */
 import Weekly from './WeeklyTips';
 import withStyles from './HOCS/withStyles';
 
@@ -19,10 +18,9 @@ import withStyles from './HOCS/withStyles';
  * inspired and see more recipes (FUNCTIONALITY for this, not done!).
  */
 class HomePage extends Component {
-  constructor(props) {
-    super(props);
-    
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   
   showMore = () => {
     console.log('inspired');
