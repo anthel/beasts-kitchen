@@ -116,24 +116,42 @@ const styles = {
   },
 
   // Login styling
+  logInForm: {
+    height: '100vh',
+    backgroundImage: `url(${'https://annabanana.co/wp-content/uploads/2017/07/Food-Photography-Tips-4.jpg'})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: '700px',
+  },
   paper: {
-    marginTop: '70px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },
   avatar: {
     backgroundColor: '#84C984',
+    marginTop: '70px',
     margin: '10px',
   },
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: '20px',
   },
+  LogInTitle: {
+    fontSize: '25px',
+    color: '#fff',
+  },
+  LogInFormInput: {
+    backgroundColor: '#fff',
+    opacity: 0.7,
+    borderRadius: '4px',
+  },
   submit: {
     margin: '10px 0 10px',
   },
+  april: {
+    backgroundColor: 'orange',
+  },
 };
-
 
 export default withStyles(styles);

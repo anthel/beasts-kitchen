@@ -18,10 +18,6 @@ import withStyles from './HOCS/withStyles';
  * inspired and see more recipes (FUNCTIONALITY for this, not done!).
  */
 class HomePage extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-  
   showMore = () => {
     console.log('inspired');
   }

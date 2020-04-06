@@ -11,10 +11,6 @@ import withStyles from './HOCS/withStyles';
  * and a title. 
  */
 class Weekly extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// }
-
   render() {
 		const { classes } = this.props;
 
