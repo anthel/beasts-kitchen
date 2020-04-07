@@ -2,8 +2,9 @@ import React, { Component, Fragment } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { Button } from '@material-ui/core';
 
-import styles from '../components/StyleModulesCss/Carousel.module.css';
+/* import styles from '../components/StyleModulesCss/Carousel.module.css'; */
 import Weekly from './WeeklyTips';
+import withStyles from './HOCS/withStyles';
 
 /**
  * @desc - Carousel is imported from the React Bootstrap library. 
@@ -18,11 +19,17 @@ import Weekly from './WeeklyTips';
  * inspired and see more recipes (FUNCTIONALITY for this, not done!).
  */
 class HomePage extends Component {
+  constructor(props) {
+    super(props);
+    
+  }
+  
   showMore = () => {
     console.log('inspired');
   }
 
   render() {
+    const { classes } = this.props;
     return (
       <Fragment>
         <Carousel>
@@ -33,7 +40,7 @@ class HomePage extends Component {
             alt="First slide"
             />
           <Carousel.Caption>
-            <h2 className={styles.homePageTitle}>Sallads</h2>
+            <h2 className={classes.homePageTitle}>Sallads</h2>
           </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -44,7 +51,7 @@ class HomePage extends Component {
             />
 
           <Carousel.Caption>
-            <h2 className={styles.homePageTitle}>Healthy</h2>
+            <h2 className={classes.homePageTitle}>Healthy</h2>
           </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -54,33 +61,24 @@ class HomePage extends Component {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h2 className={styles.homePageTitle}>Bake</h2>
+              <h2 className={classes.homePageTitle}>Bake</h2>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
         
-        <div className={styles.weeklyTips}>
-          <h2 className={styles.weeklyTipsTitle}>Weekly Tips</h2>
+        <div className={classes.weeklyTips}>
+          <h2 className={classes.weeklyTipsTitle}>Weekly Tips</h2>
         </div>
         <Weekly />
 
-        <div className={styles.weeklyTips}>
-          <h3 className={styles.weeklyTipsTitle}>Inspiration</h3>
+        <div className={classes.weeklyTips}>
+          <h3 className={classes.weeklyTipsTitle}>Inspiration</h3>
         </div>
         <div>
           <Weekly />
           
           <Button 
-            style={{
-              backgroundColor: '#84C984',
-              color: '#ffffff',
-              margin: '10px',
-              padding: '5px',
-              borderRadius: '5px',
-              border: '2px solid rgb(100, 153, 100)',
-              fontSize: '12px',
-              textTransform: 'lowercase',
-            }}
+            className={classes.showMoreBtn}
             onClick={this.showMore}
             size="small" 
             >Show more!</Button>
@@ -90,5 +88,5 @@ class HomePage extends Component {
   }
 } 
 
-export default HomePage;
+export default withStyles(HomePage);
 
