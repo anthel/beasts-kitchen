@@ -136,6 +136,9 @@ const styles = {
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: '20px',
+    backgroundColor: 'rgba(192,192,192,0.8)',
+    padding: '20px',
+    borderRadius: '5px',
   },
   LogInTitle: {
     fontSize: '25px',
@@ -148,9 +151,6 @@ const styles = {
   },
   submit: {
     margin: '10px 0 10px',
-  },
-  april: {
-    backgroundColor: 'orange',
   },
 };
 

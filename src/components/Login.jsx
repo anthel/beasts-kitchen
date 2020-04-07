@@ -86,7 +86,7 @@ class LogIn extends Component {
                   type="password"
                   id="password"
                   autoComplete="current-password"
-                  handlePassword
+                  onChange={this.handlePassword}
                 />
               </Grid>
               
