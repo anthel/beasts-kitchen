@@ -21,7 +21,7 @@ function NavigationBarMobile(props) {
   return (
     <BottomNavigation value={value} onChange={handleChange} className={classes.navBar} >
       <BottomNavigationAction component={Link} to="/" label="Home Page" value="home" icon={<HomeRoundedIcon />} />
-      <BottomNavigationAction component={Link} to="/register" label="My Page" value="MyPage" icon={<AccountBoxRoundedIcon />} />
+      <BottomNavigationAction component={Link} to="/login" label="My Page" value="MyPage" icon={<AccountBoxRoundedIcon />} />
       <BottomNavigationAction component={Link} to="/search" label="Search Recipe" value="Search" icon={<SearchRoundedIcon />} />
     </BottomNavigation>
   );

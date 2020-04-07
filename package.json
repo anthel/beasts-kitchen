@@ -12,10 +12,11 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
-    "react-multi-carousel": "^2.5.3",
     "react-mdl": "^2.1.0",
+    "react-multi-carousel": "^2.5.3",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "simple-react-validator": "^1.4.5"
   },
   "scripts": {
     "start": "react-scripts start",
