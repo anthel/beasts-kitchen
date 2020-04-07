@@ -5,6 +5,9 @@ import Home from './Screens/HomeScreen';
 import Search from './Screens/SearchScreen';
 import Register from './Screens/Registration';
 import InspirationScreen from './Screens/InspirationScreen';
+import Login from './Login';
+import SavedRecipes from './Screens/SavedRecipesScreen';
+
 
 const Routers = () => (
   <Switch>
@@ -12,6 +15,8 @@ const Routers = () => (
     <Route path="/register" component={Register} />
     <Route path="/search" component={Search} />
     <Route path="/inspiration" component={InspirationScreen} />
+    <Route path="/login" component={Login} />
+    <Route path="/savedrecipes" component={SavedRecipes}/>
   </Switch>
 )
 
