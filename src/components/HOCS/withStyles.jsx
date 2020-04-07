@@ -87,14 +87,15 @@ const styles = {
   //InspirationScreen
   inspirationContainer:{
     textAlign: 'center',
-    marginLeft: 30
+    marginLeft: 30,
+    marginBottom: 70    
   },
   lineStyle: {
       width: 375,
       marginLeft: -30,
       borderTop: '3px solid black'
   },
-  root: {
+  inspirationContent: {
       width: '90%',
       marginTop: 15,
       textAlign: 'center'
@@ -107,7 +108,7 @@ const styles = {
   overlay: {
       width: '50%',
       position: 'absolute',
-      top: '50%',
+      top: '20%',
       left: '25%',
       color: 'white',
       backgroundColor: 'grey',
