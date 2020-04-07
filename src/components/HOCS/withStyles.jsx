@@ -1,4 +1,5 @@
 import { withStyles } from '@material-ui/core/styles';
+import { red } from '@material-ui/core/colors';
 
 const styles = {
   navBar: {
@@ -115,7 +116,27 @@ const styles = {
   },
   footerBold: {
     fontWeight: 'bold',
-  }
+  },
+
+  // Registration
+
+  paper: {
+    marginTop: '8ch',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: 1,
+    backgroundColor: "#f44336",
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: '8ch',
+  },
+  submit: {
+    marginTop: '6ch',
+  },
 };
 
 
