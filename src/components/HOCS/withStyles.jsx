@@ -1,5 +1,4 @@
 import { withStyles } from '@material-ui/core/styles';
-import { red } from '@material-ui/core/colors';
 
 const styles = {
   //NavigationBar styling
@@ -53,14 +52,12 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  
   weeklyTipsTitle: {
     color: '#84C984',
     margin: '10px',
     padding: '10px',
     fontWeight: 600,
   },
-  
   showMoreBtn: {
     fontSize: '13px',
     backgroundColor: '#84C984',
@@ -76,7 +73,6 @@ const styles = {
     margin: '10px',
     borderRadius: '5px',
   },
-  
   weeklyTitle: {
     float: 'left',
     marginLeft: '10px',
@@ -149,7 +145,6 @@ const styles = {
   },
 
   // Registration
-
   paper: {
     marginTop: '8ch',
     display: 'flex',
@@ -170,24 +165,24 @@ const styles = {
 
 
   // Login styling
-  logInForm: {
+  logInContainer: {
     height: '100vh',
     backgroundImage: `url(${'https://annabanana.co/wp-content/uploads/2017/07/Food-Photography-Tips-4.jpg'})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: '700px',
   },
-  paper: {
+  logInCard: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },
-  avatar: {
+  logInAvatar: {
     backgroundColor: '#84C984',
     marginTop: '70px',
     margin: '10px',
   },
-  form: {
+  logInForm: {
     width: '100%', // Fix IE 11 issue.
     marginTop: '20px',
     backgroundColor: 'rgba(192,192,192,0.8)',
@@ -203,17 +198,17 @@ const styles = {
     opacity: 0.7,
     borderRadius: '4px',
   },
-  submit: {
+  logInSubmit: {
     margin: '10px 0 10px',
   },
   
   //Log out button
   logOutBtn: {
     width: '25%',
-    fontSize: '10px',
+    fontSize: '12px',
     backgroundColor: 'rgba(218, 86, 86, 0.8)',
     color: '#fff',
-    margin: '5px',
+    margin: '10px',
     borderRadius: '5px',
     border: '2px solid #da5656',
     cursor: 'pointer',
