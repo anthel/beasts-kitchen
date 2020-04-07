@@ -3,12 +3,13 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import SimpleReactValidator from 'simple-react-validator';
+
 import withStyles from './HOCS/withStyles';
 
 function Copyright() {
@@ -27,6 +28,8 @@ function Copyright() {
 class LogIn extends Component {
   constructor(props) {
     super(props);
+    this.validator = new SimpleReactValidator({autoForceUpdate: this});
+
     this.state = {
       email: '',
       password: '',
@@ -44,8 +47,11 @@ class LogIn extends Component {
   }
 
   navigateToSavedRecipesScreen = () => {
-    if(this.state.email.length > 10) {
-      return this.props.history.push('/savedrecipes');
+    if (this.validator.allValid()) {
+      this.props.history.push('/savedrecipes')
+    } else {
+      this.validator.showMessages();
+      this.forceUpdate();
     }
   }
 
@@ -74,6 +80,11 @@ class LogIn extends Component {
                   autoComplete="email"
                   onChange={this.handleEmail}
                 />
+                {this.validator.message(
+                  'email', 
+                  this.state.email, 
+                  'required|email', 
+                  )}
               </Grid>
               <Grid item xs={12}>
                 <TextField
@@ -88,6 +99,11 @@ class LogIn extends Component {
                   autoComplete="current-password"
                   onChange={this.handlePassword}
                 />
+                {this.validator.message(
+                  'password', 
+                  this.state.password, 
+                  'required|min:8', 
+                )}
               </Grid>
               
             </Grid>
