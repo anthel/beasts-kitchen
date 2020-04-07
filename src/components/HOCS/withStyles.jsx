@@ -152,6 +152,18 @@ const styles = {
   submit: {
     margin: '10px 0 10px',
   },
+  
+  //Log out button
+  logOutBtn: {
+    width: '25%',
+    fontSize: '10px',
+    backgroundColor: 'rgba(218, 86, 86, 0.8)',
+    color: '#fff',
+    margin: '5px',
+    borderRadius: '5px',
+    border: '2px solid #da5656',
+    cursor: 'pointer',
+  },
 };
 
 export default withStyles(styles);
