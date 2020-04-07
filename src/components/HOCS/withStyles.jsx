@@ -1,6 +1,7 @@
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
+  //NavigationBar styling
   navBar: {
     width: 375,
     position: "fixed",
@@ -81,6 +82,36 @@ const styles = {
     float: 'left',
     marginLeft: '10px',
     marginTop: '-5px',
+  },
+
+  //InspirationScreen
+  inspirationContainer:{
+    textAlign: 'center',
+    marginLeft: 30
+  },
+  lineStyle: {
+      width: 375,
+      marginLeft: -30,
+      borderTop: '3px solid black'
+  },
+  root: {
+      width: '90%',
+      marginTop: 15,
+      textAlign: 'center'
+  },
+  media: {
+      width: '100%',
+      position: 'relative',
+      height: 200,
+  },
+  overlay: {
+      width: '50%',
+      position: 'absolute',
+      top: '50%',
+      left: '25%',
+      color: 'white',
+      backgroundColor: 'grey',
+      opacity: '.8',
   },
   
   // Footer styling

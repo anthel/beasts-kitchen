@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { Button } from '@material-ui/core';
-
-/* import styles from '../components/StyleModulesCss/Carousel.module.css'; */
 import Weekly from './WeeklyTips';
 import withStyles from './HOCS/withStyles';
+import { Link } from 'react-router-dom';
 
 /**
  * @desc - Carousel is imported from the React Bootstrap library. 
@@ -22,10 +20,6 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     
-  }
-  
-  showMore = () => {
-    console.log('inspired');
   }
 
   render() {
@@ -77,11 +71,9 @@ class HomePage extends Component {
         <div>
           <Weekly />
           
-          <Button 
-            className={classes.showMoreBtn}
-            onClick={this.showMore}
-            size="small" 
-            >Show more!</Button>
+          <Link to="/inspiration" className={classes.showMoreBtn}>
+          Show more
+          </Link>
         </div>
       </Fragment>
     )
