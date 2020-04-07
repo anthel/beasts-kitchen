@@ -66,6 +66,7 @@ class LogIn extends Component {
               <Grid item xs={12}>
                 <TextField
                   className={classes.LogInFormInput}
+                  value={this.state.email}
                   variant="outlined"
                   required
                   fullWidth
@@ -84,6 +85,7 @@ class LogIn extends Component {
               <Grid item xs={12}>
                 <TextField
                   className={classes.LogInFormInput}
+                  value={this.state.password}
                   variant="outlined"
                   required
                   fullWidth
