@@ -1,6 +1,7 @@
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
+  //NavigationBar styling
   navBar: {
     width: 375,
     position: "fixed",
@@ -12,7 +13,6 @@ const styles = {
     padding: '2px 4px',
   },
   searchInput: {
-
     flex: 1,
     padding: 8,
   },
@@ -52,19 +52,16 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  
   weeklyTipsTitle: {
     color: '#84C984',
     margin: '10px',
     padding: '10px',
     fontWeight: 600,
   },
-  
   showMoreBtn: {
     fontSize: '13px',
     backgroundColor: '#84C984',
     color: '#fff',
-    border: 'none',
     margin: '10px',
     padding: '5px',
     borderRadius: '5px',
@@ -76,11 +73,41 @@ const styles = {
     margin: '10px',
     borderRadius: '5px',
   },
-  
   weeklyTitle: {
     float: 'left',
     marginLeft: '10px',
     marginTop: '-5px',
+  },
+
+  //InspirationScreen
+  inspirationContainer:{
+    textAlign: 'center',
+    marginLeft: 30,
+    marginBottom: 70    
+  },
+  lineStyle: {
+      width: 375,
+      marginLeft: -30,
+      borderTop: '3px solid black'
+  },
+  inspirationContent: {
+      width: '90%',
+      marginTop: 15,
+      textAlign: 'center'
+  },
+  media: {
+      width: '100%',
+      position: 'relative',
+      height: 200,
+  },
+  overlay: {
+      width: '50%',
+      position: 'absolute',
+      top: '20%',
+      left: '25%',
+      color: 'white',
+      backgroundColor: 'grey',
+      opacity: '.8',
   },
   
   // Footer styling
@@ -115,8 +142,77 @@ const styles = {
   },
   footerBold: {
     fontWeight: 'bold',
-  }
-};
+  },
 
+  // Registration
+  paper: {
+    marginTop: '8ch',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: 1,
+    backgroundColor: "#f44336",
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: '8ch',
+  },
+  submit: {
+    marginTop: '6ch',
+  },
+
+
+  // Login styling
+  logInContainer: {
+    height: '100vh',
+    backgroundImage: `url(${'https://annabanana.co/wp-content/uploads/2017/07/Food-Photography-Tips-4.jpg'})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: '700px',
+  },
+  logInCard: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  logInAvatar: {
+    backgroundColor: '#84C984',
+    marginTop: '70px',
+    margin: '10px',
+  },
+  logInForm: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: '20px',
+    backgroundColor: 'rgba(192,192,192,0.8)',
+    padding: '20px',
+    borderRadius: '5px',
+  },
+  LogInTitle: {
+    fontSize: '25px',
+    color: '#fff',
+  },
+  LogInFormInput: {
+    backgroundColor: '#fff',
+    opacity: 0.7,
+    borderRadius: '4px',
+  },
+  logInSubmit: {
+    margin: '10px 0 10px',
+  },
+  
+  //Log out button
+  logOutBtn: {
+    width: '25%',
+    fontSize: '12px',
+    backgroundColor: 'rgba(218, 86, 86, 0.8)',
+    color: '#fff',
+    margin: '10px',
+    borderRadius: '5px',
+    border: '2px solid #da5656',
+    cursor: 'pointer',
+  },
+};
 
 export default withStyles(styles);

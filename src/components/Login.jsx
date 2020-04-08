@@ -36,13 +36,8 @@ class LogIn extends Component {
     };
   }
 
-  handleEmail = (e) => {
-    this.setState({email: e.target.value});
-    e.preventDefault();
-  }
-
-  handlePassword = (e) => {
-    this.setState({password: e.target.value});
+  handleInputs = (e) => {
+    this.setState({[e.target.name]: e.target.value});
     e.preventDefault();
   }
 
@@ -58,19 +53,20 @@ class LogIn extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Container className={classes.logInForm} component="main" maxWidth="xs">
+      <Container className={classes.logInContainer} component="main" maxWidth="xs">
         <CssBaseline /> 
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
+        <div className={classes.logInCard}>
+          <Avatar className={classes.logInAvatar}>
           </Avatar>
           <Typography className={classes.LogInTitle} component="h1" variant="h5">
             Log in
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.logInForm} noValidate>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
                   className={classes.LogInFormInput}
+                  value={this.state.email}
                   variant="outlined"
                   required
                   fullWidth
@@ -78,7 +74,7 @@ class LogIn extends Component {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
-                  onChange={this.handleEmail}
+                  onChange={this.handleInputs}
                 />
                 {this.validator.message(
                   'email', 
@@ -89,6 +85,7 @@ class LogIn extends Component {
               <Grid item xs={12}>
                 <TextField
                   className={classes.LogInFormInput}
+                  value={this.state.password}
                   variant="outlined"
                   required
                   fullWidth
@@ -97,7 +94,7 @@ class LogIn extends Component {
                   type="password"
                   id="password"
                   autoComplete="current-password"
-                  onChange={this.handlePassword}
+                  onChange={this.handleInputs}
                 />
                 {this.validator.message(
                   'password', 
@@ -111,7 +108,7 @@ class LogIn extends Component {
               fullWidth
               variant="contained"
               color="primary"
-              className={classes.submit}
+              className={classes.logInSubmit}
               onClick={this.navigateToSavedRecipesScreen}
             >
               Log in
