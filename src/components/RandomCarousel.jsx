@@ -12,7 +12,7 @@ import withApiRequests from './HOCS/withApiRequests';
  * and mobile screens. Includes each picture that the carousel has
  * and a title. 
  */
-class Weekly extends Component {
+class RandomCarousel extends Component {
   constructor(props){
     super(props);
     
@@ -27,11 +27,14 @@ class Weekly extends Component {
   }
 
   getImages = () => {
-    this.props.getTag()
-    .then(data => {    
+    this.props.getRandom()
+    .then(data => {
+      console.log(data);
+    
       this.setState({apiImages: data.recipes.map((items) =>{
         return items.image;
       })})
+
       this.setState({apiFoodTitle: data.recipes.map((items) =>{
         return items.title;
     })})
@@ -39,16 +42,15 @@ class Weekly extends Component {
   }
 
 
-
   createImgCarousel = () => {  
 
-    let imgTagList = []
+    let imgList = []
     const { classes } = this.props;
 
     // Outer loop to create parent
     for (let i = 0; i < 10; i++) {
     //Create the parent and add the listOfChildren
-      imgTagList.push(  
+      imgList.push(  
         <div key={i}>
           <img 
           src={this.state.apiImages[i]}
@@ -58,11 +60,10 @@ class Weekly extends Component {
         </div>      
       )
     }    
-    return imgTagList
+    return imgList
   }
 
   render() {
-
     const responsive = {
       superLargeDesktop: {
         breakpoint: { max: 4000, min: 3000 },
@@ -84,6 +85,7 @@ class Weekly extends Component {
         partialVisibilityGutter: 30
       },
     };
+
     return(
       <Fragment>
         <Carousel responsive={responsive}
@@ -101,4 +103,4 @@ class Weekly extends Component {
 export default compose(
   withStyles,
   withApiRequests
-)(Weekly);
+)(RandomCarousel);

@@ -124,11 +124,9 @@ const styles = {
   footerh1: {
     color: 'black',
   },
-/*   mdlLogo {
-    font-weight: bold;
-    font-size: 2em;
-    color: black;
-  } */
+  mdlLogo: {
+    fontSize: '2em',
+  }, 
   flexFoot: {
     display: 'flex',
     justifyContent: 'center',

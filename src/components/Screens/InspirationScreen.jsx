@@ -17,7 +17,6 @@ import { compose } from 'redux';
 
   componentDidMount(){
     this.getImages();
-
   }
 
   getImages = () => {
