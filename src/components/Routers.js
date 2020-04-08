@@ -4,7 +4,7 @@ import Home from './Screens/HomeScreen';
 import Search from './Screens/SearchScreen';
 import Register from './Screens/Registration';
 import InspirationScreen from './Screens/InspirationScreen';
-import Login from './Login';
+import Login from './Screens/Login';
 import SavedRecipes from './Screens/SavedRecipesScreen';
 
 
