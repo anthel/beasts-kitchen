@@ -63,13 +63,11 @@ class LogIn extends Component {
   navigateToSavedRecipesScreen = () => {
     if (this.validator.allValid()) {
       for(let i=0;i < this.state.users.length;i++) {
-        if(this.state.email == this.state.users[i].email
-          && this.state.password == this.state.users[i].password) {
+        if(this.state.email === this.state.users[i].email
+          && this.state.password === this.state.users[i].password) {
             this.props.history.push('/savedrecipes')
         }
       }
-
-      
     } else {
       this.validator.showMessages();
       this.forceUpdate();
