@@ -3,6 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Weekly from './WeeklyTips';
 import withStyles from './HOCS/withStyles';
 import { Link } from 'react-router-dom';
+import RandomCarousel from './RandomCarousel';
 
 /**
  * @desc - Carousel is imported from the React Bootstrap library. 
@@ -57,7 +58,7 @@ class HomePage extends Component {
         </Carousel>
         
         <div className={classes.weeklyTips}>
-          <h2 className={classes.weeklyTipsTitle}>Weekly Tips</h2>
+          <h2 className={classes.weeklyTipsTitle}>Go Vego!</h2>
         </div>
         <Weekly />
 
@@ -65,8 +66,8 @@ class HomePage extends Component {
           <h3 className={classes.weeklyTipsTitle}>Inspiration</h3>
         </div>
         <div>
-          <Weekly />
-          
+        <RandomCarousel />  
+             
           <Link to="/inspiration" className={classes.showMoreBtn}>
           Show more
           </Link>
