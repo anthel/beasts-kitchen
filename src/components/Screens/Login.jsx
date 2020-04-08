@@ -33,6 +33,25 @@ class LogIn extends Component {
     this.state = {
       email: '',
       password: '',
+
+      users: [
+        {
+          email: "Sincere@april.biz",
+          password: "Apt. 556",
+        },
+        {
+          email: "Shanna@melissa.tv",
+          password: "Suite 879",
+        },
+        {
+          email: "Nathan@yesenia.net",
+          password: "Suite 847",
+        },
+        {
+          email: "Julianne.OConner@kory.org",
+          password: "Apt. 692",
+        },
+      ]
     };
   }
 
@@ -43,7 +62,14 @@ class LogIn extends Component {
 
   navigateToSavedRecipesScreen = () => {
     if (this.validator.allValid()) {
-      this.props.history.push('/savedrecipes')
+      for(let i=0;i < this.state.users.length;i++) {
+        if(this.state.email == this.state.users[i].email
+          && this.state.password == this.state.users[i].password) {
+            this.props.history.push('/savedrecipes')
+        }
+      }
+
+      
     } else {
       this.validator.showMessages();
       this.forceUpdate();
