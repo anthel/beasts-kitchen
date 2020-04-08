@@ -10,13 +10,13 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import SimpleReactValidator from 'simple-react-validator';
 
-import withStyles from './HOCS/withStyles';
+import withStyles from '../HOCS/withStyles';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="/">
         Beasts Inc.
       </Link>{' '}
       {new Date().getFullYear()}
