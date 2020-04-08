@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import withStyles from '../HOCS/withStyles'
 import { Card, CardActionArea } from '@material-ui/core';
+import withApiRequests from '../HOCS/withApiRequests';
+import { compose } from 'redux';
+
 
  class InspirationScreen extends Component {
   constructor(props){
@@ -13,7 +16,25 @@ import { Card, CardActionArea } from '@material-ui/core';
   }
 
   componentDidMount(){
-    this.fetchRandomImages();    
+    this.getImages();
+
+  }
+
+  getImages = () => {
+    this.props.getRandom()
+    .then(data => {
+      console.log(data);
+     
+      this.setState({apiImages: data.recipes.map((items) =>{
+        console.log(items);
+        return items.image;
+      })})
+
+      this.setState({apiFoodTitle: data.recipes.map((items) =>{
+        console.log(items);
+        return items.title;
+      })})
+  })
   }
 
   clickOnImg = () => {
@@ -45,29 +66,6 @@ import { Card, CardActionArea } from '@material-ui/core';
     return cardsList
   }
 
-  fetchRandomImages = () => {
-    
-    const apikey = '&apiKey=4da713dcb3264dadabdd2320753598fd';
-
-    fetch('https://api.spoonacular.com/recipes/random?number=10' + apikey)
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-       
-        this.setState({apiImages: data.recipes.map((items) =>{
-          console.log(items);
-          return items.image;
-        })})
-
-        this.setState({apiFoodTitle: data.recipes.map((items) =>{
-          console.log(items);
-          return items.title;
-        })})
-    })
-  }
-
   render() {
     const { classes } = this.props;    
     return (
@@ -81,4 +79,7 @@ import { Card, CardActionArea } from '@material-ui/core';
   }
 }
 
-export default withStyles(InspirationScreen);
+export default compose(
+  withApiRequests,
+  withStyles
+)(InspirationScreen)

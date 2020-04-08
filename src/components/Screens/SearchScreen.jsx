@@ -6,6 +6,8 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Chip from '@material-ui/core/Chip';
 import withStyles from '../HOCS/withStyles';
+import withApiRequests from '../HOCS/withApiRequests';
+import { compose } from 'redux';
 
 
 function SearchScreen(props) {
@@ -32,7 +34,11 @@ function SearchScreen(props) {
         {/* Invisible submit button, search by pressing enter/ok */}
         <IconButton type="submit" 
           
-          onClick={(event)=>{sendSearchRequest(event,inputValue)}} 
+          onClick={(event)=>{
+            props.getSearch(inputValue)
+            .then(response => console.log(response))
+            event.preventDefault();
+          }} 
         />
       </Paper>
 
@@ -52,22 +58,7 @@ function SearchScreen(props) {
   );
 }
 
-export default withStyles(SearchScreen);
-
-function sendSearchRequest(event, inputValue) {
-
-
-  const apiKey = 'apiKey=7e966aa4956a4e908dcc1e6276c1af38&';
-
-  const searchQuery = 'query=' + inputValue;
-
-  fetch('https://api.spoonacular.com/recipes/search?' + apiKey + searchQuery)
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-    })
-
-    event.preventDefault();
-}
+export default compose(
+  withStyles,
+  withApiRequests
+)(SearchScreen)
