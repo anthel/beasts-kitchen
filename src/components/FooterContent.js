@@ -20,10 +20,12 @@ function FooterContent(props) {
               <p className={classes.footerBold}>BeastKitchen.com</p>
               <p className={classes.footerBold}>Follow us!</p>
               
-              <i className="fa fa-facebook-square"/>
-              <i className="fa fa-instagram"/>
-              <i className="fa fa-snapchat-ghost"/>
-              <i className="fa fa-envelope"/>                         
+              <div className={classes.mdlLogo}>
+                <i className="fa fa-facebook-square"/>
+                <i className="fa fa-instagram"/>
+                <i className="fa fa-snapchat-ghost"/>
+                <i className="fa fa-envelope"/> 
+              </div>                        
             </FooterSection>
           </div>
         </Footer>
