@@ -85,7 +85,8 @@ function showResults(res) {
       <Card key={i}>
         <CardActionArea>
         <img 
-        width={200}
+        width={100}
+        height={100}
         src={BASE +item.image} alt="item"/>
         <p>{item.title}</p>
         </CardActionArea>

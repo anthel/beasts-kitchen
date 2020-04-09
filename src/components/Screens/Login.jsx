@@ -11,6 +11,9 @@ import Container from '@material-ui/core/Container';
 import SimpleReactValidator from 'simple-react-validator';
 
 import withStyles from '../HOCS/withStyles';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { setUser, setJson, setCurrent } from '../Redux/actions';
 
 function Copyright() {
   return (
@@ -25,7 +28,7 @@ function Copyright() {
   );
 }
 
-class LogIn extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.validator = new SimpleReactValidator({autoForceUpdate: this});
@@ -34,25 +37,35 @@ class LogIn extends Component {
       email: '',
       password: '',
 
-      users: [
-        {
-          email: "Sincere@april.biz",
-          password: "Apt. 556",
-        },
-        {
-          email: "Shanna@melissa.tv",
-          password: "Suite 879",
-        },
-        {
-          email: "Nathan@yesenia.net",
-          password: "Suite 847",
-        },
-        {
-          email: "Julianne.OConner@kory.org",
-          password: "Apt. 692",
-        },
-      ]
+      
     };
+    this.JsonUsers();
+    
+  }
+
+
+  JsonUsers = () => {
+
+    const users = [
+      {
+        email: "Sincere@april.biz",
+        password: "Apt. 556",
+      },
+      {
+        email: "Shanna@melissa.tv",
+        password: "Suite 879",
+      },
+      {
+        email: "Nathan@yesenia.net",
+        password: "Suite 847",
+      },
+      {
+        email: "Julianne.OConner@kory.org",
+        password: "Apt. 692",
+      },
+    ]
+
+    this.props.setJsonUsers(users);
   }
 
   handleInputs = (e) => {
@@ -62,10 +75,12 @@ class LogIn extends Component {
 
   navigateToSavedRecipesScreen = () => {
     if (this.validator.allValid()) {
-      for(let i=0;i < this.state.users.length;i++) {
-        if(this.state.email == this.state.users[i].email
-          && this.state.password == this.state.users[i].password) {
-            this.props.history.push('/savedrecipes')
+      for(let i=0;i < this.props.users.length;i++) {
+        if(this.state.email === this.props.users[i].email
+          && this.state.password === this.props.users[i].password) {
+            this.props.setCurrentUser(this.state.email);
+            this.props.history.push('/savedrecipes');
+            
         }
       }
 
@@ -156,5 +171,22 @@ class LogIn extends Component {
   }
   
 }
+const mapStateToProps = (state, ownProps) => ({
+  user: state.root.user,
+  users: state.root.users,
+  currentuser: state.root.currentuser
+})
 
-export default withStyles(LogIn);
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  setNewUser: (user) => dispatch(setUser(user)),
+  setJsonUsers: (users) => dispatch(setJson(users)),
+  setCurrentUser: (currentuser) => dispatch(setCurrent(currentuser))
+})
+
+
+export default compose(
+  withStyles,
+  connect(mapStateToProps, mapDispatchToProps)
+  )(Login);
+
+
