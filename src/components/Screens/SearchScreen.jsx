@@ -76,7 +76,9 @@ function SearchScreen(props) {
 
 function showResults(res) {
 
+
   const BASE = "https://spoonacular.com/recipeImages/";
+
   
   return res.results.map((item, i) => {
     console.log(item.image);
@@ -88,6 +90,7 @@ function showResults(res) {
         width={100}
         height={100}
         src={BASE +item.image} alt="item"/>
+
         <p>{item.title}</p>
         </CardActionArea>
       </Card>
