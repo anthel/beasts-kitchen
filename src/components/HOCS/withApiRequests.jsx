@@ -9,9 +9,11 @@ export default function withApiRequests(WrappedComponent) {
 
     apikey = '&apiKey=4da713dcb3264dadabdd2320753598fd'; //Katlina
 
-    apiKey2 = 'apiKey=7e966aa4956a4e908dcc1e6276c1af38&'; //Antes
+
+    apiKey2 = '&apiKey=7e966aa4956a4e908dcc1e6276c1af38'; //Antes
 
     apiKey3 = '&apiKey=177107bbb0684795849147b2a3772e18'; // Karwan
+
     
     fetchRandomImages = () => {
     
@@ -31,7 +33,7 @@ export default function withApiRequests(WrappedComponent) {
 
     fetchSearchRequest = (searchValue) => {
 
-      return fetch(this.BASE_URL + 'search?query=' + searchValue + this.apikey2)
+      return fetch(this.BASE_URL + 'search?query=' + searchValue + this.apiKey2)
       .then(response => {
         console.log(response)
         return response.json();
