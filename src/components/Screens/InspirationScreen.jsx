@@ -10,6 +10,8 @@ import { compose } from 'redux';
     super(props);
    
     this.state = {
+      apiObj: [],
+      apiID: [],
       apiImages: [],
       apiFoodTitle: '',
     }
@@ -25,20 +27,24 @@ import { compose } from 'redux';
       console.log(data);
      
       this.setState({apiImages: data.recipes.map((items) =>{
-        console.log(items);
         return items.image;
       })})
 
       this.setState({apiFoodTitle: data.recipes.map((items) =>{
         console.log(items);
+        
         return items.title;
       })})
-  })
-  }
 
-  clickOnImg = () => {
-    console.log('To recipe Screen!');
-  }
+      this.setState({apiID: data.recipes.map((items) =>{
+        return items.id;
+      })})
+
+      this.setState({apiObj: data.recipes.map((items) =>{
+        return items;
+      })})
+  })
+}
 
   createCard = () => {  
     
@@ -50,7 +56,9 @@ import { compose } from 'redux';
     //Create the parent and add the listOfChildren
       cardsList.push(        
         <Card className={classes.inspirationContent} key={i}>
-          <CardActionArea onClick={this.clickOnImg}>
+          <CardActionArea onClick={()=>{
+            this.props.history.push('/recipescreen/'+ this.state.apiID[i], this.state.apiObj[i])
+            }}>
             <img className={classes.media}
               src={this.state.apiImages[i]}
               alt="food"

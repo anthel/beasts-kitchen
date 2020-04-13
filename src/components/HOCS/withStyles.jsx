@@ -211,6 +211,31 @@ const styles = {
     border: '2px solid #da5656',
     cursor: 'pointer',
   },
+
+  //Recipe screen
+  recipeImg: {
+    width: '100%',
+  },
+  recipeTitle: {
+    width: '80%',
+    position: 'absolute',
+    top: '20%',
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    backgroundColor: 'black',
+    opacity: '.8',
+  },
+  recipeHeaders: {
+    backgroundColor: '#7fffd4',
+    textTransform: 'uppercase'
+  },
+  recipeHeadPara: {
+    position: 'absolute',
+    marginLeft: '77%',
+    marginTop: 20,
+    fontWeight: 'bold'
+  },
 };
 
 export default withStyles(styles);

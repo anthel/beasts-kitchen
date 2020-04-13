@@ -23,6 +23,13 @@ export default function withApiRequests(WrappedComponent) {
         })
     }
 
+    fetchIngredientById = () => {
+      return fetch(this.BASE_URL + '{id}/ingredientWidget.json' + this.apiKey3)
+      .then(response => {
+        return response.json();
+      })
+    }
+
     fetchImagesByTag = () => {
       return fetch(this.BASE_URL + 'random?number=10&tags=vegetarian' + this.apiKey3)
       .then(response => {
@@ -48,6 +55,7 @@ export default function withApiRequests(WrappedComponent) {
           getRandom={this.fetchRandomImages}
           getTag={this.fetchImagesByTag}
           getSearch={this.fetchSearchRequest}
+          getIngredient={this.fetchIngredientById}
           {...this.props}
           />
       )
