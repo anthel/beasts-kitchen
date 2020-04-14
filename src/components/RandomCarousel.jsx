@@ -32,7 +32,6 @@ class RandomCarousel extends Component {
   getImages = () => {
     this.props.getRandom()
     .then(data => {
-      console.log(data);
     
       this.setState({apiImages: data.recipes.map((items) =>{
         return items.image;
@@ -57,7 +56,7 @@ class RandomCarousel extends Component {
 
     let imgList = []
     const { classes } = this.props;
-    console.log(this.props.history);
+    (this.props.history);
 
     // Outer loop to create parent
     for (let i = 0; i < 10; i++) {

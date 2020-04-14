@@ -21,7 +21,7 @@ class RecipeScreen extends Component {
     }
 
     setInstructions = () => {
-      console.log(this.props.location.state)
+      
         const steps = this.state.recipe.analyzedInstructions[0].steps;
         
         

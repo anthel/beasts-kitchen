@@ -21,7 +21,7 @@ function SearchScreen(props) {
   const { classes } = props;
 
   useEffect(() => {
-    console.log(searchResults)
+ 
    
     
   }, [searchResults])
@@ -80,7 +80,7 @@ function SearchScreen(props) {
 
 function showResults(res, props) {
 
-  console.log(props.history)
+ 
 
   
   const BASE = "https://spoonacular.com/recipeImages/";
@@ -89,10 +89,10 @@ function showResults(res, props) {
 
   return res.results.map((item, i) => {
     
-    console.log(item);
+   
     props.getIngredient(item.id)
       .then(response => {
-        console.log(response)
+        
       })
       return (
         <Card key={i}>
