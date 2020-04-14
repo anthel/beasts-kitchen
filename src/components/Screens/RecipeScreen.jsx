@@ -11,38 +11,68 @@ class RecipeScreen extends Component {
         this.state = {
             recipe: this.props.location.state,
             recipeSteps: [],
+            ingredients: [],
         }
     }
 
     componentDidMount(){
         this.setSteps();
+        this.setIngredients();
     }
 
     setSteps = () => {
         const steps = this.state.recipe.analyzedInstructions[0].steps;
-        console.log(steps);
+        
         
          this.setState({recipeSteps: steps.map((items) =>{
-             console.log(items);
+             
              
              return items.step;
         })})        
     }
 
+    setIngredients = () => {
+      const apiIngredients = this.state.recipe.extendedIngredients;
+      console.log(apiIngredients);
+      
+       this.setState({ingredients: apiIngredients.map((items) =>{
+         
+           
+           return items.original;
+      })})        
+  }
+  createIngredients = () => {
+    const ingredients = this.state.ingredients;
+    const classes  = this.props.classes;
+   
+   const renderIngredients = ingredients.map((item, i) => {
+     return (
+       <li className={classes.ingredientsListItem} key={i}>
+         <span className={classes.stepsListItem}>
+           {item} 
+         </span>
+       </li>
+   
+   )})
+       
+   return renderIngredients;
+}
+
     createSteps = () => {
          const theSteps = this.state.recipeSteps;
+         const classes  = this.props.classes;
         
-        for (let i = 0; i < theSteps.length; i++) {
-            return (
-                <div style={{marginBottom: 400}}>
-                     <ol>
-                         <li>
-                            {theSteps[i]} 
-                         </li>
-                     </ol>
-                </div>
-            )
-        }       
+        const renderSteps = theSteps.map((step, i) => {
+          return (
+            <li className={classes.listItemMargin} key={i}>
+              <span className={classes.stepsListItem}>
+                {step} 
+              </span>
+            </li>
+        
+        )})
+            
+        return renderSteps;
     }
 
     render() {
@@ -68,15 +98,19 @@ class RecipeScreen extends Component {
                     <h3>Ingredients</h3>
                 </div>
                 <div>
-                    <p>ingredient list</p>
+                  <ul>
+                    {this.createIngredients()}
+                  </ul>
                 </div>
 
                 <div className={classes.recipeHeaders}>
                     <h3>What to do</h3>
                 </div>
 
-                <div>
-                    {this.createSteps()}
+                <div className={classes.stepListDiv}>
+                    <ol className={classes.stepList}>
+                        {this.createSteps()}
+                    </ol>
                 </div>
             </div>
         )

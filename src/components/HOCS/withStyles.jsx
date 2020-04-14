@@ -236,6 +236,28 @@ const styles = {
     marginTop: 20,
     fontWeight: 'bold'
   },
+  stepList: {
+    fontWeight: 'bold', 
+    fontSize: 20,
+  },
+  stepListDiv: {
+    width: '90%',
+    textAlign: 'justify',
+    marginLeft: -10,
+    marginBottom: 100,
+  },
+  stepsListItem: {
+    fontWeight: 'normal',
+    fontSize: 16,
+  },
+  listItemMargin: {
+    marginTop: 10,
+  },
+  ingredientsListItem: {
+    listStyleType: 'square',
+    fontSize: 16,
+  }
+
 };
 
 export default withStyles(styles);
