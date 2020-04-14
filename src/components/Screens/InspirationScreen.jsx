@@ -15,7 +15,7 @@ import { compose } from 'redux';
       apiImages: [],
       apiFoodTitle: '',
     }
-    console.log(this.props);
+    
   }
 
   componentDidMount(){
@@ -25,14 +25,14 @@ import { compose } from 'redux';
   getImages = () => {
     this.props.getRandom()
     .then(data => {
-      console.log(data);
+      
      
       this.setState({apiImages: data.recipes.map((items) =>{
         return items.image;
       })})
 
       this.setState({apiFoodTitle: data.recipes.map((items) =>{
-        console.log(items);
+        
         
         return items.title;
       })})
