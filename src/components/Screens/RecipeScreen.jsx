@@ -16,11 +16,12 @@ class RecipeScreen extends Component {
     }
 
     componentDidMount(){
-        this.setSteps();
+        this.setInstructions();
         this.setIngredients();
     }
 
-    setSteps = () => {
+    setInstructions = () => {
+      console.log(this.props.location.state)
         const steps = this.state.recipe.analyzedInstructions[0].steps;
         
         
@@ -33,7 +34,7 @@ class RecipeScreen extends Component {
 
     setIngredients = () => {
       const apiIngredients = this.state.recipe.extendedIngredients;
-      console.log(apiIngredients);
+
       
        this.setState({ingredients: apiIngredients.map((items) =>{
          

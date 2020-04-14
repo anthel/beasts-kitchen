@@ -15,6 +15,7 @@ import { compose } from 'redux';
       apiImages: [],
       apiFoodTitle: '',
     }
+    console.log(this.props);
   }
 
   componentDidMount(){

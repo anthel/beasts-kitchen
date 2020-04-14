@@ -7,6 +7,7 @@ import InspirationScreen from './Screens/InspirationScreen';
 import Login from './Screens/Login';
 import SavedRecipes from './Screens/SavedRecipesScreen';
 import RecipeScreen from './Screens/RecipeScreen';
+import RandomCarousel from './RandomCarousel';
 
 
 const Routers = () => (

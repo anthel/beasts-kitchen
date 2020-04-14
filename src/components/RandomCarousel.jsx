@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { CardActionArea } from '@material-ui/core';
 
 import withStyles from './HOCS/withStyles';
 import { compose } from 'redux';
@@ -19,6 +20,8 @@ class RandomCarousel extends Component {
     this.state = {
       apiImages: [],
       apiFoodTitle: '',
+      apiObj: [],
+      apiID: [],
     }
   }
 
@@ -38,6 +41,14 @@ class RandomCarousel extends Component {
       this.setState({apiFoodTitle: data.recipes.map((items) =>{
         return items.title;
     })})
+
+    this.setState({apiID: data.recipes.map((items) =>{
+      return items.id;
+    })})
+
+    this.setState({apiObj: data.recipes.map((items) =>{
+      return items;
+    })})
    })
   }
 
@@ -46,21 +57,25 @@ class RandomCarousel extends Component {
 
     let imgList = []
     const { classes } = this.props;
+    console.log(this.props.history);
 
     // Outer loop to create parent
     for (let i = 0; i < 10; i++) {
     //Create the parent and add the listOfChildren
+
       imgList.push(  
-        <div key={i}>
-          <img 
-          src={this.state.apiImages[i]}
-          alt="beat"
-          className={classes.weeklyImg}/>
-          <h6 className={classes.weeklyTitle}>{this.state.apiFoodTitle[i]}</h6>
-        </div>      
-      )
+          <CardActionArea key={i} onClick={()=>{
+            this.props.history.push('/recipescreen/'+ this.state.apiID[i], this.state.apiObj[i])
+            }}>
+            <img 
+            src={this.state.apiImages[i]}
+            alt="beat"
+            className={classes.weeklyImg}/>
+            <h6 className={classes.weeklyTitle}>{this.state.apiFoodTitle[i]}</h6>  
+          </CardActionArea>
+        )
     }    
-    return imgList
+    return imgList;
   }
 
   render() {

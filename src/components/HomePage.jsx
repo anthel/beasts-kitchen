@@ -4,6 +4,8 @@ import Weekly from './WeeklyTips';
 import withStyles from './HOCS/withStyles';
 import { Link } from 'react-router-dom';
 import RandomCarousel from './RandomCarousel';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 
 /**
  * @desc - Carousel is imported from the React Bootstrap library. 
@@ -18,7 +20,9 @@ import RandomCarousel from './RandomCarousel';
  * inspired and see more recipes (FUNCTIONALITY for this, not done!).
  */
 class HomePage extends Component {
-    
+    constructor(props) {
+      super(props);
+    }
   render() {
     const { classes } = this.props;
     return (
@@ -60,13 +64,13 @@ class HomePage extends Component {
         <div className={classes.weeklyTips}>
           <h2 className={classes.weeklyTipsTitle}>Go Vego!</h2>
         </div>
-        <Weekly />
+        <Weekly history={this.props.history}/>
 
         <div className={classes.weeklyTips}>
           <h3 className={classes.weeklyTipsTitle}>Inspiration</h3>
         </div>
         <div>
-        <RandomCarousel />  
+        <RandomCarousel history={this.props.history}/>  
              
           <Link to="/inspiration" className={classes.showMoreBtn}>
           Show more
@@ -77,5 +81,8 @@ class HomePage extends Component {
   }
 } 
 
-export default withStyles(HomePage);
+export default compose(
+  withRouter,
+  withStyles
+)(HomePage);
 
