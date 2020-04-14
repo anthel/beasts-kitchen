@@ -16,11 +16,12 @@ function SearchScreen(props) {
 
   const [inputValue, setInputValue] = useState('');
   const [searchResults, setSearchResults] = useState(null);
+  
 
   const { classes } = props;
 
   useEffect(() => {
-    console.log(searchResults)
+ 
    
     
   }, [searchResults])
@@ -45,9 +46,12 @@ function SearchScreen(props) {
         <IconButton type="submit" 
           
           onClick={(event)=>{
+
             props.getSearch(inputValue)
-            .then(response => setSearchResults(response))
-            
+            .then(response => {
+              setSearchResults(response)
+              
+            })
             event.preventDefault();
           }} 
         />
@@ -68,33 +72,41 @@ function SearchScreen(props) {
 
       <div>
        
-        {searchResults && showResults(searchResults)}
+        {searchResults && showResults(searchResults, props)}
       </div>
     </React.Fragment>
   );
 }
 
-function showResults(res) {
+function showResults(res, props) {
 
+ 
 
+  
   const BASE = "https://spoonacular.com/recipeImages/";
 
   
-  return res.results.map((item, i) => {
-    console.log(item.image);
-    
-    return (
-      <Card key={i}>
-        <CardActionArea>
-        <img 
-        width={100}
-        height={100}
-        src={BASE +item.image} alt="item"/>
 
-        <p>{item.title}</p>
+  return res.results.map((item, i) => {
+    
+   
+    props.getIngredient(item.id)
+      .then(response => {
+        
+      })
+      return (
+        <Card key={i}>
+        <CardActionArea>
+          <img 
+          width={100}
+          height={100}
+          src={BASE +item.image} alt="item"
+          />
+
+          <p>{item.title}</p>
         </CardActionArea>
       </Card>
-    );
+      );
   })
 }
 

@@ -6,6 +6,8 @@ import Register from './Screens/Registration';
 import InspirationScreen from './Screens/InspirationScreen';
 import Login from './Screens/Login';
 import SavedRecipes from './Screens/SavedRecipesScreen';
+import RecipeScreen from './Screens/RecipeScreen';
+import RandomCarousel from './RandomCarousel';
 
 
 const Routers = () => (
@@ -16,6 +18,7 @@ const Routers = () => (
     <Route path="/inspiration" component={InspirationScreen} />
     <Route path="/login" component={Login} />
     <Route path="/savedrecipes" component={SavedRecipes}/>
+    <Route path="/recipescreen/:id" component={RecipeScreen} />
   </Switch>
 )
 

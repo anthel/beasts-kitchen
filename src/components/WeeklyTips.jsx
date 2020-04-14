@@ -5,6 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 import withStyles from './HOCS/withStyles';
 import { compose } from 'redux';
 import withApiRequests from './HOCS/withApiRequests';
+import { CardActionArea } from '@material-ui/core';
 
 /**
  * @desc - this component uses the Carousel from the npm package
@@ -19,6 +20,8 @@ class Weekly extends Component {
     this.state = {
       apiImages: [],
       apiFoodTitle: '',
+      apiObj: [],
+      apiID: [],
     }
   }
 
@@ -35,6 +38,13 @@ class Weekly extends Component {
       this.setState({apiFoodTitle: data.recipes.map((items) =>{
         return items.title;
     })})
+    this.setState({apiID: data.recipes.map((items) =>{
+      return items.id;
+    })})
+
+    this.setState({apiObj: data.recipes.map((items) =>{
+      return items;
+    })})
    })
   }
 
@@ -48,17 +58,20 @@ class Weekly extends Component {
     // Outer loop to create parent
     for (let i = 0; i < 10; i++) {
     //Create the parent and add the listOfChildren
-      imgTagList.push(  
-        <div key={i}>
-          <img 
-          src={this.state.apiImages[i]}
-          alt="beat"
-          className={classes.weeklyImg}/>
-          <h6 className={classes.weeklyTitle}>{this.state.apiFoodTitle[i]}</h6>
-        </div>      
+
+      imgTagList.push( 
+          <CardActionArea key={i} onClick={()=>{
+              this.props.history.push('/recipescreen/'+ this.state.apiID[i], this.state.apiObj[i])
+              }}>
+              <img 
+              src={this.state.apiImages[i]}
+              alt="beat"
+              className={classes.weeklyImg}/>
+              <h6 className={classes.weeklyTitle}>{this.state.apiFoodTitle[i]}</h6>     
+            </CardActionArea>
       )
     }    
-    return imgTagList
+    return imgTagList;
   }
 
   render() {

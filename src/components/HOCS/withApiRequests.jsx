@@ -7,7 +7,7 @@ export default function withApiRequests(WrappedComponent) {
 
     BASE_URL = "https://api.spoonacular.com/recipes/";
 
-    apikey = '&apiKey=4da713dcb3264dadabdd2320753598fd'; //Katlina
+    apiKey = '&apiKey=4da713dcb3264dadabdd2320753598fd'; //Katlina
 
 
     apiKey2 = '&apiKey=7e966aa4956a4e908dcc1e6276c1af38'; //Antes
@@ -17,25 +17,32 @@ export default function withApiRequests(WrappedComponent) {
     
     fetchRandomImages = () => {
     
-      return fetch(this.BASE_URL + 'random?number=10' + this.apikey)
+      return fetch(this.BASE_URL + 'random?number=10' + this.apiKey)
         .then(response => {
           return response.json();
-        })
+        }) 
+    }
+
+    fetchIngredientById = (id) => {
+      return fetch(this.BASE_URL + id + '/information?includeNutrition=false' + this.apiKey)
+      .then(response => {
+        return response.json();
+      })
     }
 
     fetchImagesByTag = () => {
-      return fetch(this.BASE_URL + 'random?number=10&tags=vegetarian' + this.apiKey3)
+      return fetch(this.BASE_URL + 'random?number=10&tags=vegetarian' + this.apiKey2)
       .then(response => {
-        console.log(response)
+        
         return response.json();
       })
     }
 
     fetchSearchRequest = (searchValue) => {
 
-      return fetch(this.BASE_URL + 'search?query=' + searchValue + this.apiKey2)
+      return fetch(this.BASE_URL + 'search?query=' + searchValue + this.apiKey)
       .then(response => {
-        console.log(response)
+        
         return response.json();
       })
     }
@@ -45,9 +52,10 @@ export default function withApiRequests(WrappedComponent) {
       
       return (
         <WrappedComponent 
-          getRandom={this.fetchRandomImages}
+          getRandom={this.fetchRandomImages} 
           getTag={this.fetchImagesByTag}
           getSearch={this.fetchSearchRequest}
+          getIngredient={this.fetchIngredientById}
           {...this.props}
           />
       )

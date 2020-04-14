@@ -211,6 +211,53 @@ const styles = {
     border: '2px solid #da5656',
     cursor: 'pointer',
   },
+
+  //Recipe screen
+  recipeImg: {
+    width: '100%',
+  },
+  recipeTitle: {
+    width: '80%',
+    position: 'absolute',
+    top: '20%',
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    backgroundColor: 'black',
+    opacity: '.8',
+  },
+  recipeHeaders: {
+    backgroundColor: '#7fffd4',
+    textTransform: 'uppercase'
+  },
+  recipeHeadPara: {
+    position: 'absolute',
+    marginLeft: '77%',
+    marginTop: 20,
+    fontWeight: 'bold'
+  },
+  stepList: {
+    fontWeight: 'bold', 
+    fontSize: 20,
+  },
+  stepListDiv: {
+    width: '90%',
+    textAlign: 'justify',
+    marginLeft: -10,
+    marginBottom: 100,
+  },
+  stepsListItem: {
+    fontWeight: 'normal',
+    fontSize: 16,
+  },
+  listItemMargin: {
+    marginTop: 10,
+  },
+  ingredientsListItem: {
+    listStyleType: 'square',
+    fontSize: 16,
+  }
+
 };
 
 export default withStyles(styles);
