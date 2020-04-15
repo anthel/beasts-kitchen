@@ -95,7 +95,7 @@ class RecipeScreen extends Component {
                      <p className={classes.recipeHeadPara}>
                          {recipe.readyInMinutes}:MIN
                     </p>
-                    <h3>Ingredients</h3>
+                    <h3 className={classes.headerTitles}>Ingredients</h3>
                 </div>
                 <div>
                   <ul>
@@ -104,7 +104,7 @@ class RecipeScreen extends Component {
                 </div>
 
                 <div className={classes.recipeHeaders}>
-                    <h3>What to do</h3>
+                    <h3 className={classes.headerTitles}>What to do</h3>
                 </div>
 
                 <div className={classes.stepListDiv}>
