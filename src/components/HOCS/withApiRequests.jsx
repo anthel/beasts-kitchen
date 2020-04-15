@@ -33,7 +33,6 @@ export default function withApiRequests(WrappedComponent) {
     fetchImagesByTag = () => {
       return fetch(this.BASE_URL + 'random?number=10&tags=vegetarian' + this.apiKey3)
       .then(response => {
-        
         return response.json();
       })
     }
