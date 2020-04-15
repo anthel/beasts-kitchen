@@ -226,17 +226,20 @@ const styles = {
     fontWeight: 'bold',
     fontSize: 20,
     backgroundColor: 'black',
-    opacity: '.8',
+    opacity: '.7',
+    margin: '10px',
+    padding: '5px',
+    marginLeft: '.10px',
   },
   recipeHeaders: {
-    backgroundColor: '#7fffd4',
-    textTransform: 'uppercase'
+    backgroundColor: '#aed4ae',
+    textTransform: 'uppercase',
   },
   recipeHeadPara: {
     position: 'absolute',
     marginLeft: '77%',
     marginTop: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   stepList: {
     fontWeight: 'bold', 
@@ -258,6 +261,10 @@ const styles = {
   ingredientsListItem: {
     listStyleType: 'square',
     fontSize: 16,
+  },
+  headerTitles: {
+    margin: '10px',
+    padding: '3px',
   },
 
   //Saved Recipes Screen
