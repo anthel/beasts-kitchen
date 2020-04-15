@@ -17,7 +17,7 @@ export default function withApiRequests(WrappedComponent) {
     
     fetchRandomImages = () => {
     
-      return fetch(this.BASE_URL + 'random?number=10' + this.apiKey3)
+      return fetch(this.BASE_URL + 'random?number=10' + this.apiKey)
         .then(response => {
           return response.json();
         }) 
@@ -39,7 +39,7 @@ export default function withApiRequests(WrappedComponent) {
 
     fetchSearchRequest = (searchValue) => {
 
-      return fetch(this.BASE_URL + 'search?query=' + searchValue + this.apiKey3)
+      return fetch(this.BASE_URL + 'search?query=' + searchValue + this.apiKey2)
       .then(response => {
         
         return response.json();

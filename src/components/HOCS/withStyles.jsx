@@ -16,6 +16,22 @@ const styles = {
     flex: 1,
     padding: 8,
   },
+  lineStyling:{
+    borderTop: '1px solid black',
+  },
+  SearchCardContainer: {
+    display: 'flex',
+    justifyContent: 'start',
+  },
+  SearchImage:{
+    width: '40%',
+    height: 150,
+    
+  },
+  SearchTitle: {
+    marginLeft: '20%',
+    fontSize: 20
+  },
 
   // 4 different stylings for chips
   chipOne: {
@@ -146,19 +162,38 @@ const styles = {
   },
 
   // Registration
-  paper: {
-    marginTop: '8ch',
+  RegiContainer: {
+    height: '100vh',
+    backgroundImage: `url(${'https://annabanana.co/wp-content/uploads/2017/07/Food-Photography-Tips-4.jpg'})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundSize: '700px',
+  },
+  RegiCard: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
   },
-  avatar: {
-    margin: 1,
-    backgroundColor: "#f44336",
+  RegiAvatar: {
+    backgroundColor: '#84C984',
+    marginTop: '70px',
+    margin: '10px',
   },
-  form: {
+  RegiForm: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: '8ch',
+    marginTop: '20px',
+    backgroundColor: 'rgba(192,192,192,0.8)',
+    padding: '20px',
+    borderRadius: '5px',
+  },
+  RegiTitle: {
+    fontSize: '25px',
+    color: '#fff',
+  },
+  RegiFormInput: {
+    backgroundColor: '#fff',
+    opacity: 0.7,
+    borderRadius: '4px',
   },
   submit: {
     marginTop: '6ch',

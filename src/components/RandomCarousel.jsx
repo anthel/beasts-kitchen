@@ -66,9 +66,11 @@ class RandomCarousel extends Component {
             this.props.history.push('/recipescreen/'+ this.state.apiID[i], this.state.apiObj[i])
             }}>
             <img 
-            src={this.state.apiImages[i]}
-            alt="beat"
-            className={classes.weeklyImg}/>
+              src={this.state.apiImages[i]}
+              alt="beat"
+              className={classes.weeklyImg}
+            />
+            
             <h6 className={classes.weeklyTitle}>{this.state.apiFoodTitle[i]}</h6>  
           </CardActionArea>
         )

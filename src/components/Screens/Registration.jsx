@@ -52,19 +52,20 @@ class SignUp extends React.Component {
     const { firstName, lastName, email, password } = this.state;
 
     return (
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" className={classes.RegiContainer}>
         <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
+        <div className={classes.RegiCard}>
+          <Avatar className={classes.RegiAvatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h5" className={classes.RegiTitle}>
             Sign up
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.RegiForm} noValidate>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  className={classes.RegiFormInput}
                   autoComplete="fname"
                   name="firstName"
                   variant="outlined"
@@ -81,6 +82,7 @@ class SignUp extends React.Component {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  className={classes.RegiFormInput}
                   variant="outlined"
                   required
                   fullWidth
@@ -96,6 +98,7 @@ class SignUp extends React.Component {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  className={classes.RegiFormInput}
                   variant="outlined"
                   required
                   fullWidth
@@ -110,6 +113,7 @@ class SignUp extends React.Component {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  className={classes.RegiFormInput}
                   variant="outlined"
                   required
                   fullWidth
@@ -146,7 +150,7 @@ class SignUp extends React.Component {
             </Button>
             <Grid container justify="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
