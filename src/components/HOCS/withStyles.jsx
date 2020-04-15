@@ -59,14 +59,18 @@ const styles = {
     fontWeight: 600,
   },
   showMoreBtn: {
-    fontSize: '13px',
+    fontSize: '18px',
+    width: '94%',
     backgroundColor: '#84C984',
     color: '#fff',
     margin: '10px',
-    padding: '5px',
+    padding: '10px',
     borderRadius: '5px',
     border: '2px solid rgb(100, 153, 100)',
     cursor: 'pointer',
+  },
+  btnLink: {
+    color: 'white',
   },
   weeklyImg: {
     width: '150px',
