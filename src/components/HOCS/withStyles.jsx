@@ -232,7 +232,7 @@ const styles = {
     marginLeft: '.10px',
   },
   recipeHeaders: {
-    backgroundColor: '#7fffd4',
+    backgroundColor: '#aed4ae',
     textTransform: 'uppercase',
   },
   recipeHeadPara: {
