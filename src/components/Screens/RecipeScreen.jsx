@@ -6,7 +6,6 @@ import withApiRequests from '../HOCS/withApiRequests';
 class RecipeScreen extends Component {
     constructor(props){
         super(props);
-        const api = this.props;
 
         this.state = {
             recipe: this.props.location.state,

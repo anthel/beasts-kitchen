@@ -57,7 +57,6 @@ class RandomCarousel extends Component {
     let imgList = []
     const { classes } = this.props;
 
-
     // Outer loop to create parent
     for (let i = 0; i < 10; i++) {
     //Create the parent and add the listOfChildren
