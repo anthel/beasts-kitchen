@@ -59,17 +59,18 @@ function SearchScreen(props) {
 
       <div className={classes.chipSection}>
 
-        <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipOne} clickable />
-        <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipTwo} clickable />
-        <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipThree} clickable />
-        <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipFour} clickable />
-        <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipOne} clickable />
-        <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipTwo} clickable />
-        <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipThree} clickable />
-        <Chip label="Clickable Link" component="a" href="#chip" className={classes.chipFour} clickable />
-    
-      </div>
+        <Chip label="Meat" component="a" href="#chip" className={classes.chipOne} clickable />
+        <Chip label="Lactos Free" component="a" href="#chip" className={classes.chipTwo} clickable />
+        <Chip label="Gluten Free" component="a" href="#chip" className={classes.chipThree} clickable />
+        <Chip label="Fish" component="a" href="#chip" className={classes.chipFour} clickable />
+        <Chip label="Friuts & Veggies" component="a" href="#chip" className={classes.chipOne} clickable />
+        <Chip label="Desserts" component="a" href="#chip" className={classes.chipTwo} clickable />
+        <Chip label="Vegan Dogshit" component="a" href="#chip" className={classes.chipThree} clickable />
+        <Chip label="Vegitarian" component="a" href="#chip" className={classes.chipFour} clickable />
+        <Chip label="Taco Taco Taco" component="a" href="#chip" className={classes.chipFour} clickable />
 
+      </div>
+          <hr className={classes.lineStyling} />
       <div>
        
         {searchResults && showResults(searchResults, props)}
@@ -80,7 +81,7 @@ function SearchScreen(props) {
 
 function showResults(res, props) {
 
- 
+  const { classes } = props;
 
   
   const BASE = "https://spoonacular.com/recipeImages/";
@@ -96,14 +97,13 @@ function showResults(res, props) {
       })
       return (
         <Card key={i}>
-        <CardActionArea>
+        <CardActionArea className={classes.SearchCardContainer}>
           <img 
-          width={100}
-          height={100}
-          src={BASE +item.image} alt="item"
+            className={classes.SearchImage}
+            src={BASE +item.image} alt="item"
           />
 
-          <p>{item.title}</p>
+          <p className={classes.SearchTitle}>{item.title}</p>
         </CardActionArea>
       </Card>
       );
