@@ -17,30 +17,29 @@ export default function withApiRequests(WrappedComponent) {
     
     fetchRandomImages = () => {
     
-      return fetch(this.BASE_URL + 'random?number=10' + this.apiKey)
+      return fetch(this.BASE_URL + 'random?number=10' + this.apiKey3)
         .then(response => {
           return response.json();
         }) 
     }
 
     fetchIngredientById = (id) => {
-      return fetch(this.BASE_URL + id + '/information?includeNutrition=false' + this.apiKey)
+      return fetch(this.BASE_URL + id + '/information?includeNutrition=false' + this.apiKey3)
       .then(response => {
         return response.json();
       })
     }
 
     fetchImagesByTag = () => {
-      return fetch(this.BASE_URL + 'random?number=10&tags=vegetarian' + this.apiKey)
+      return fetch(this.BASE_URL + 'random?number=10&tags=vegetarian' + this.apiKey3)
       .then(response => {
-        
         return response.json();
       })
     }
 
     fetchSearchRequest = (searchValue) => {
 
-      return fetch(this.BASE_URL + 'search?query=' + searchValue + this.apiKey)
+      return fetch(this.BASE_URL + 'search?query=' + searchValue + this.apiKey3)
       .then(response => {
         
         return response.json();

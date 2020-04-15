@@ -20,9 +20,6 @@ import { compose } from 'redux';
  * inspired and see more recipes (FUNCTIONALITY for this, not done!).
  */
 class HomePage extends Component {
-    constructor(props) {
-      super(props);
-    }
   render() {
     const { classes } = this.props;
     return (
@@ -71,10 +68,12 @@ class HomePage extends Component {
         </div>
         <div>
         <RandomCarousel history={this.props.history}/>  
-             
-          <Link to="/inspiration" className={classes.showMoreBtn}>
-          Show more
+        <button className={classes.showMoreBtn}>
+          <Link to="/inspiration" className={classes.btnLink}>
+            Get more inspiration! »
           </Link>
+        </button>
+
         </div>
       </Fragment>
     )

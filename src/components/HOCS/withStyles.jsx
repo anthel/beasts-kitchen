@@ -59,14 +59,18 @@ const styles = {
     fontWeight: 600,
   },
   showMoreBtn: {
-    fontSize: '13px',
+    fontSize: '18px',
+    width: '94%',
     backgroundColor: '#84C984',
     color: '#fff',
     margin: '10px',
-    padding: '5px',
+    padding: '10px',
     borderRadius: '5px',
     border: '2px solid rgb(100, 153, 100)',
     cursor: 'pointer',
+  },
+  btnLink: {
+    color: 'white',
   },
   weeklyImg: {
     width: '150px',
@@ -82,32 +86,31 @@ const styles = {
   //InspirationScreen
   inspirationContainer:{
     textAlign: 'center',
-    marginLeft: 30,
-    marginBottom: 70    
+    marginBottom: 70,    
   },
   lineStyle: {
-      width: 375,
-      marginLeft: -30,
-      borderTop: '3px solid black'
+    width: 375,
+    marginLeft: -30,
+    borderTop: '3px solid black'
   },
   inspirationContent: {
-      width: '90%',
-      marginTop: 15,
-      textAlign: 'center'
+    width: '90%',
+    marginTop: 15,
+    textAlign: 'center'
   },
   media: {
-      width: '100%',
-      position: 'relative',
-      height: 200,
+    width: '100%',
+    position: 'relative',
+    height: 200,
   },
   overlay: {
-      width: '50%',
-      position: 'absolute',
-      top: '20%',
-      left: '25%',
-      color: 'white',
-      backgroundColor: 'grey',
-      opacity: '.8',
+    width: '50%',
+    position: 'absolute',
+    top: '20%',
+    left: '25%',
+    color: 'white',
+    backgroundColor: 'grey',
+    opacity: '.8',
   },
   
   // Footer styling
@@ -160,7 +163,6 @@ const styles = {
   submit: {
     marginTop: '6ch',
   },
-
 
   // Login styling
   logInContainer: {
@@ -256,8 +258,29 @@ const styles = {
   ingredientsListItem: {
     listStyleType: 'square',
     fontSize: 16,
-  }
+  },
 
+  //Saved Recipes Screen
+  cardImage: {
+    width: '100px',
+    height: 'auto',
+    textAlign: 'center',
+    margin: '15px',
+  },
+  savedRecipesDiv: {
+    backgroundColor: '#84C98450',
+    height: '100px',
+  },
+  savedRecipes: {
+    width: '100px',
+  },
+  savedRecipesTitles: {
+    float: 'right',
+    marginTop: '-88px',
+    marginRight: '145px',
+    fontSize: '18px',
+    fontWeight: 'bold',
+  },
 };
 
 export default withStyles(styles);
