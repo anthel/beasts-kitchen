@@ -36,16 +36,11 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-
-      
     };
     this.JsonUsers();
-    
   }
 
-
   JsonUsers = () => {
-
     const users = [
       {
         email: "Sincere@april.biz",
@@ -64,7 +59,6 @@ class Login extends Component {
         password: "Apt. 692",
       },
     ]
-
     this.props.setJsonUsers(users);
   }
 
@@ -80,11 +74,8 @@ class Login extends Component {
           && this.state.password === this.props.users[i].password) {
             this.props.setCurrentUser(this.state.email);
             this.props.history.push('/savedrecipes');
-            
         }
-      }
-
-      
+      } 
     } else {
       this.validator.showMessages();
       this.forceUpdate();
@@ -143,7 +134,6 @@ class Login extends Component {
                   'required|min:8', 
                 )}
               </Grid>
-              
             </Grid>
             <Button
               fullWidth
@@ -169,8 +159,8 @@ class Login extends Component {
       </Container>
     );
   }
-  
 }
+
 const mapStateToProps = (state, ownProps) => ({
   user: state.root.user,
   users: state.root.users,
@@ -182,7 +172,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   setJsonUsers: (users) => dispatch(setJson(users)),
   setCurrentUser: (currentuser) => dispatch(setCurrent(currentuser))
 })
-
 
 export default compose(
   withStyles,
