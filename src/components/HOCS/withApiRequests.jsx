@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 /**
  * @desc - this HOC handles all API requests from Spoonacular.
+ * @author - Karwan, Ante & Katalina
  */
 export default function withApiRequests(WrappedComponent) {
   return class extends Component {

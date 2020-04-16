@@ -12,6 +12,7 @@ import withStyles from './HOCS/withStyles';
  * 'react-multi-carousel'. Makes it responsive for desktop, tablet
  * and mobile screens. Includes each picture that the carousel 
  * has and a title from the API. 
+ * @author - Katalina & Karwan
  */
 class Weekly extends Component {
   constructor(props){

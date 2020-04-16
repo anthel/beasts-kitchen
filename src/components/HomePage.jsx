@@ -19,6 +19,7 @@ import withStyles from './HOCS/withStyles';
  * 
  * Includes one button from Material UI, the button re-directs the user
  * to the Inspiration Screen with more recipes from the API. 
+ * @author - Katalina
  */
 class HomePage extends Component {
   render() {

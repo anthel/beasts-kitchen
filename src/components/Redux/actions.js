@@ -1,4 +1,8 @@
-// Action that returns and object with type and payload depending on user accepted as params
+/**
+ * @desc - Action that returns an object with type and 
+ * payload depending on users, loggeduser and newuser accepted as params.
+ * @author - Ante & Katalina
+ */
 export const setJson = (users) => ({
   type: 'SET_JSON',
   payload: users

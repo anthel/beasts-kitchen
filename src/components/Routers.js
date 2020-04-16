@@ -10,7 +10,6 @@ import SavedRecipes from './Screens/SavedRecipesScreen';
 import CategoryScreen from './Screens/CategoryScreen';
 import RecipeScreen from './Screens/RecipeScreen';
 
-
 /**
  * @desc - the Switch looks through its children <Route>s and
  * renders the first one that matches the current URL and 

@@ -15,6 +15,7 @@ import withStyles from '../HOCS/withStyles';
  * Redux to false and re-directs the user to the Login Screen. 
  * Renders cards with images and food titles, mocked data that
  * represents recipes that would have been saved by the user. 
+ * @author - Katalina
  */
 class SavedRecipesScreen extends Component {
 	logOut = () => {

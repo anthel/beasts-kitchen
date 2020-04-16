@@ -6,6 +6,7 @@ import FooterContent from '../FooterContent';
 /**
  * @desc - this component represents the Home Page Screen.
  * It renders the Home Page Component.
+ * @author - Katalina
  */
 class HomeScreen extends Component {
 	render() {

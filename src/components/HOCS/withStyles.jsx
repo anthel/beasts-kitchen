@@ -1,5 +1,9 @@
 import { withStyles } from '@material-ui/core/styles';
 
+/**
+ * @desc - a styling HOC that includes all styling for the application.
+ * @author - Katalina, Karwan & Ante
+ */
 const styles = {
   //NavigationBar styling
   navBar: {

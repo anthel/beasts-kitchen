@@ -38,6 +38,7 @@ function Copyright() {
  * changes to true, the user then gets re-directed to the Saved Recipes Screen.
  * If user is logged in, the Saved Recipes Screen is rendered instead of the
  * Login Screen.  
+ * @author - Katalina & Ante
  */
 class Login extends Component {
   constructor(props) {
@@ -105,7 +106,7 @@ class Login extends Component {
                     'email', 
                     this.state.email, 
                     'required|email', 
-                    )}
+                  )}
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
