@@ -24,7 +24,7 @@ const styles = {
     justifyContent: 'start',
   },
   SearchImage:{
-    width: '40%',
+    width: 150,
     height: 150,
     
   },
@@ -105,13 +105,13 @@ const styles = {
     marginBottom: 70,    
   },
   lineStyle: {
-    width: 375,
-    marginLeft: -30,
+    width: '100%',
     borderTop: '3px solid black'
   },
   inspirationContent: {
     width: '90%',
     marginTop: 15,
+    marginLeft: 10,
     textAlign: 'center'
   },
   media: {

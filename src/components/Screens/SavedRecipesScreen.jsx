@@ -4,13 +4,18 @@ import { Card, CardActionArea } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import withStyles from '../HOCS/withStyles';
+import { setLoggedUser} from '../Redux/actions';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 /**
  * @desc - this component represents the Home Page Screen.
  * It renders the Home Page Component.
  */
 class SavedRecipesScreen extends Component {
 	logOut = () => {
-		return this.props.history.push('/login');
+    this.props.setLoggedIn(false);
+    this.props.history.push("/login");
 	}
 
 	render() {
@@ -87,4 +92,16 @@ class SavedRecipesScreen extends Component {
 	}
 }
 
-export default withStyles(SavedRecipesScreen);
+const mapStateToProps = (state, ownProps) => ({
+  isLoggedIn: state.root.loggeduser
+})
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  setLoggedIn: (isLoggedIn) => dispatch(setLoggedUser(isLoggedIn)),
+})
+
+export default compose(
+  withStyles,
+  withRouter,
+  connect(mapStateToProps, mapDispatchToProps)
+  )(SavedRecipesScreen);

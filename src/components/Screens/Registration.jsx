@@ -10,8 +10,12 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+
 import withStyles from '../HOCS/withStyles';
 import SimpleReactValidator from 'simple-react-validator';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import {setJson} from '../Redux/actions';
 
 function Copyright() {
   return (
@@ -39,8 +43,6 @@ class SignUp extends React.Component {
 
     this.validator = new SimpleReactValidator({autoForceUpdate: this});
   }
-
-
   
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
@@ -137,6 +139,14 @@ class SignUp extends React.Component {
               className={classes.submit}
               onClick={(event) => {
                 if(this.validator.allValid()) {
+
+                  const user = {
+                    email: this.state.email,
+                    password: this.state.password,
+                  };
+                  const newUsers = [...this.props.users, user];
+
+                  this.props.setNewUser(newUsers);
                   this.props.history.push('/login');
                 }
                 else {
@@ -161,10 +171,20 @@ class SignUp extends React.Component {
           <Copyright />
         </Box>
       </Container>
-    
     );
   }
 }
 
 
-export default withStyles(SignUp);
+const mapStateToProps = (state, ownProps) => ({
+  users: state.root.users,
+})
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  setNewUser: (users) => dispatch(setJson(users)),
+})
+
+export default compose(
+  withStyles,
+  connect(mapStateToProps, mapDispatchToProps)
+  )(SignUp);
