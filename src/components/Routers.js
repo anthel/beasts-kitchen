@@ -7,6 +7,7 @@ import InspirationScreen from './Screens/InspirationScreen';
 import Login from './Screens/Login';
 import SavedRecipes from './Screens/SavedRecipesScreen';
 import RecipeScreen from './Screens/RecipeScreen';
+import CategoryScreen from './Screens/CategoryScreen';
 
 
 const Routers = () => (
@@ -17,6 +18,7 @@ const Routers = () => (
     <Route path="/inspiration" component={InspirationScreen} />
     <Route path="/login" component={Login} />
     <Route path="/savedrecipes" component={SavedRecipes}/>
+    <Route path="/category" component={CategoryScreen}/>
     <Route path="/recipescreen/:id" component={RecipeScreen} />
   </Switch>
 )

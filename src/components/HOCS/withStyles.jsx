@@ -58,6 +58,33 @@ const styles = {
     margin: 5,
   },
 
+  //CategoryScreen Styling
+
+  cardsContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    marginBottom: 70,
+  },
+  CategoryCard: {
+    marginLeft: '2.5%',
+    marginTop: 20,
+    width: '45%',
+    height: 150,
+  },
+  CategoryImg: {
+    width: '100%',
+  },
+  CategoryOverlay: {
+    width: '50%',
+    textAlign: 'center',
+    position: 'absolute',
+    top: 0,
+    left: '25%',
+    color: 'white',
+    backgroundColor: 'grey',
+    opacity: '.8',
+  },
+
   // Home page
   homePageTitle: {
     backgroundColor: 'rgba(0, 0, 0, 0.3)',

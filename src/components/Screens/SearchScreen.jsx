@@ -59,15 +59,15 @@ function SearchScreen(props) {
 
       <div className={classes.chipSection}>
 
-        <Chip label="Meat" component="a" href="#chip" className={classes.chipOne} clickable />
-        <Chip label="Lactos Free" component="a" href="#chip" className={classes.chipTwo} clickable />
-        <Chip label="Gluten Free" component="a" href="#chip" className={classes.chipThree} clickable />
-        <Chip label="Fish" component="a" href="#chip" className={classes.chipFour} clickable />
-        <Chip label="Friuts & Veggies" component="a" href="#chip" className={classes.chipOne} clickable />
-        <Chip label="Desserts" component="a" href="#chip" className={classes.chipTwo} clickable />
-        <Chip label="Vegan Dogshit" component="a" href="#chip" className={classes.chipThree} clickable />
-        <Chip label="Vegitarian" component="a" href="#chip" className={classes.chipFour} clickable />
-        <Chip label="Taco Taco Taco" component="a" href="#chip" className={classes.chipFour} clickable />
+        <Chip label="Meat" component="a" href="/category" className={classes.chipOne} clickable />
+        <Chip label="Lactos Free" component="a" href="/category" className={classes.chipTwo} clickable />
+        <Chip label="Gluten Free" component="a" href="/category" className={classes.chipThree} clickable />
+        <Chip label="Fish" component="a" href="/category" className={classes.chipFour} clickable />
+        <Chip label="Friuts & Veggies" component="a" href="/category" className={classes.chipOne} clickable />
+        <Chip label="Desserts" component="a" href="/category" className={classes.chipTwo} clickable />
+        <Chip label="Vegan Dogshit" component="a" href="/category" className={classes.chipThree} clickable />
+        <Chip label="Vegitarian" component="a" href="/category" className={classes.chipFour} clickable />
+        <Chip label="Taco Taco Taco" component="a" href="/category" className={classes.chipFour} clickable />
 
       </div>
           <hr className={classes.lineStyling} />
