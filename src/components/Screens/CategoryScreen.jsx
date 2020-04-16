@@ -5,6 +5,13 @@ import { withRouter } from 'react-router-dom';
 import withStyles from '../HOCS/withStyles';
 import { Card, CardActionArea } from '@material-ui/core';
 
+/**
+ * @description - The categoryscreen where we loop 30 times to create
+ * 30 cards with the image of the food category.
+ * Example: If the user choses Pasta as a category -  30 pasta recipes will show up
+ * @author - Karwan Gulnezer
+ */
+
 class CategoryScreen extends Component {
 
   createCard = () => {  
