@@ -1,9 +1,9 @@
 import React from 'react'
+
 import { Footer ,FooterSection} from 'react-mdl';
 import withStyles from './HOCS/withStyles';
 
 function FooterContent(props) {
-
   const { classes } = props;
 
   return (

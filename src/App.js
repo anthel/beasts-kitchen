@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Routers from './components/Routers';
 import NavigationBarMobile from './components/NavigationBarMobil';
 
@@ -11,9 +12,9 @@ import NavigationBarMobile from './components/NavigationBarMobil';
  */
 function App() {
   return (
-      <div className="demo-big-content">
-        <Routers />
-        <NavigationBarMobile />
+    <div className="demo-big-content">
+      <Routers />
+      <NavigationBarMobile />
     </div>
   );
 }

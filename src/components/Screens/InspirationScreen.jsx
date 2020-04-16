@@ -4,7 +4,9 @@ import { Card, CardActionArea } from '@material-ui/core';
 import withApiRequests from '../HOCS/withApiRequests';
 import { compose } from 'redux';
 
-
+/**
+ * @desc - 
+ */
  class InspirationScreen extends Component {
   constructor(props){
     super(props);
@@ -15,7 +17,6 @@ import { compose } from 'redux';
       apiImages: [],
       apiFoodTitle: '',
     }
-    
   }
 
   componentDidMount(){
@@ -25,22 +26,15 @@ import { compose } from 'redux';
   getImages = () => {
     this.props.getRandom()
     .then(data => {
-      
-     
       this.setState({apiImages: data.recipes.map((items) =>{
         return items.image;
       })})
-
       this.setState({apiFoodTitle: data.recipes.map((items) =>{
-        
-        
         return items.title;
       })})
-
       this.setState({apiID: data.recipes.map((items) =>{
         return items.id;
       })})
-
       this.setState({apiObj: data.recipes.map((items) =>{
         return items;
       })})
@@ -48,7 +42,6 @@ import { compose } from 'redux';
 }
 
   createCard = () => {  
-    
     let cardsList = []
     const { classes } = this.props;
   
@@ -77,11 +70,10 @@ import { compose } from 'redux';
   render() {
     const { classes } = this.props;    
     return (
-      
       <div className={classes.inspirationContainer}>
         <h3>Get Inspired!</h3>
         <hr className={classes.lineStyle}/>
-          {this.createCard()}
+        {this.createCard()}
       </div>
     )
   }

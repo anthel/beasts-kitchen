@@ -28,12 +28,10 @@ const initialState = {
 * @Params
 *   state which has a default state
 *   action which is the action object
-*
 *   returns a new state depending on the action type and payload
 */
 const root = (state = initialState, action) => {
   switch (action.type) {
-    
     case 'SET_JSON':
       return {
         ...state,
@@ -49,13 +47,12 @@ const root = (state = initialState, action) => {
         ...state,
         newuser: action.payload
       }
-      default:
+    default:
       return state
   }
 }
 
 export default combineReducers({
   root,
-  // Here you can add more reducers
 })
 

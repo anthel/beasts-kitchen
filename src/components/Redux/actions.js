@@ -1,5 +1,4 @@
 // Action that returns and object with type and payload depending on user accepted as params
-
 export const setJson = (users) => ({
   type: 'SET_JSON',
   payload: users

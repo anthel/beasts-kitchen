@@ -2,15 +2,19 @@ import React, { Component, Fragment } from 'react';
 import Button from '@material-ui/core/Button';
 import { Card, CardActionArea } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-
-import withStyles from '../HOCS/withStyles';
-import { setLoggedUser} from '../Redux/actions';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+
+import { setLoggedUser} from '../Redux/actions';
+import withStyles from '../HOCS/withStyles';
+
 /**
- * @desc - this component represents the Home Page Screen.
- * It renders the Home Page Component.
+ * @desc - this class represents the Saved Recipes Screen.
+ * It includes a log out button that sets the loggedUser in 
+ * Redux to false and re-directs the user to the Login Screen. 
+ * Renders cards with images and food titles, mocked data that
+ * represents recipes that would have been saved by the user. 
  */
 class SavedRecipesScreen extends Component {
 	logOut = () => {
@@ -45,7 +49,6 @@ class SavedRecipesScreen extends Component {
               />
             </CardActionArea>
           </Card>
-
           <p className={classes.savedRecipesTitles}><FavoriteIcon/> Food title</p>
         </div>
         <div className={classes.savedRecipesDiv}>
@@ -58,10 +61,7 @@ class SavedRecipesScreen extends Component {
               />
             </CardActionArea>
           </Card>
-          <p 
-            className={classes.savedRecipesTitles}>
-            <FavoriteIcon className={classes.heartIcon}/> Food title
-          </p>
+          <p className={classes.savedRecipesTitles}><FavoriteIcon/> Food title</p>
         </div>
         <div>
           <Card className={classes.cardImage}>
@@ -104,4 +104,4 @@ export default compose(
   withStyles,
   withRouter,
   connect(mapStateToProps, mapDispatchToProps)
-  )(SavedRecipesScreen);
+)(SavedRecipesScreen);

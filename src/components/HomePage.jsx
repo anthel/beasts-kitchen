@@ -1,23 +1,24 @@
 import React, { Component, Fragment } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import Weekly from './WeeklyTips';
-import withStyles from './HOCS/withStyles';
 import { Link } from 'react-router-dom';
-import RandomCarousel from './RandomCarousel';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
+
+import RandomCarousel from './RandomCarousel';
+import Weekly from './WeeklyTips';
+import withStyles from './HOCS/withStyles';
 
 /**
  * @desc - Carousel is imported from the React Bootstrap library. 
  * This class represents the Home Page, it renders the main Carousel
  * with three different pictures and titles. 
  * 
- * Has two titles for the page, 'Weekly Tips' and 'Inspiration'.
+ * Has two titles for the page, 'Go Vego' and 'Inspiration'.
  * Under each title, it renders the Weekly Component that has the Weekly 
- * Tips images and slideshow with titles.
+ * Tips images and slideshow with titles from API.
  * 
- * Includes one button from Material UI, if the user wants to get more 
- * inspired and see more recipes (FUNCTIONALITY for this, not done!).
+ * Includes one button from Material UI, the button re-directs the user
+ * to the Inspiration Screen with more recipes from the API. 
  */
 class HomePage extends Component {
   render() {
@@ -31,9 +32,9 @@ class HomePage extends Component {
             src="https://cdn.sunbasket.com/51aff5d6-80bf-421e-8e24-68c54941ab76.jpg"
             alt="First slide"
             />
-          <Carousel.Caption>
-            <h2 className={classes.homePageTitle}>Sallads</h2>
-          </Carousel.Caption>
+            <Carousel.Caption>
+              <h2 className={classes.homePageTitle}>Sallads</h2>
+            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -41,10 +42,9 @@ class HomePage extends Component {
               src="https://i2.wp.com/theculinarycook.com/wp-content/uploads/2019/05/types-of-salad-cobb.jpg?fit=900%2C600&ssl=1"
               alt="Second slide"
             />
-
-          <Carousel.Caption>
-            <h2 className={classes.homePageTitle}>Healthy</h2>
-          </Carousel.Caption>
+            <Carousel.Caption>
+              <h2 className={classes.homePageTitle}>Healthy</h2>
+            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -73,7 +73,6 @@ class HomePage extends Component {
             Get more inspiration! »
           </Link>
         </button>
-
         </div>
       </Fragment>
     )

@@ -9,12 +9,12 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import SimpleReactValidator from 'simple-react-validator';
-
-import withStyles from '../HOCS/withStyles';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+
 import { setLoggedUser, setJson} from '../Redux/actions';
 import SavedRecipesScreen from './SavedRecipesScreen';
+import withStyles from '../HOCS/withStyles';
 
 function Copyright() {
   return (
@@ -29,6 +29,16 @@ function Copyright() {
   );
 }
 
+/**
+ * @desc - this component represents the Login Screen. 
+ * It includes a login form with email and password.
+ * Validation from 'simple-react-validator'.
+ * Has logic to check if a user exists in Redux, if it does,
+ * the user can log in and the redux state for the loggedUser
+ * changes to true, the user then gets re-directed to the Saved Recipes Screen.
+ * If user is logged in, the Saved Recipes Screen is rendered instead of the
+ * Login Screen.  
+ */
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -64,14 +74,16 @@ class Login extends Component {
     const { classes } = this.props;
 
     if(this.props.isLoggedIn === false) {
-      
       return (
         <Container className={classes.logInContainer} component="main" maxWidth="xs">
           <CssBaseline /> 
           <div className={classes.logInCard}>
             <Avatar className={classes.logInAvatar}>
             </Avatar>
-            <Typography className={classes.LogInTitle} component="h1" variant="h5">
+            <Typography 
+              className={classes.LogInTitle} 
+              component="h1" 
+              variant="h5">
               Log in
             </Typography>
             <form className={classes.logInForm} noValidate>
@@ -159,6 +171,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default compose(
   withStyles,
   connect(mapStateToProps, mapDispatchToProps)
-  )(Login);
+)(Login);
 
 
