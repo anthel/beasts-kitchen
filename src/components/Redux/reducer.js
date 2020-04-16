@@ -1,9 +1,26 @@
 import { combineReducers } from 'redux'
 
 const initialState = {
-  user: null,
-  users: null,
-  currentuser: null,
+  loggeduser: false,
+  newuser: null,
+  users: [
+    {
+      email: "Sincere@april.biz",
+      password: "Apt. 556",
+    },
+    {
+      email: "Shanna@melissa.tv",
+      password: "Suite 879",
+    },
+    {
+      email: "Nathan@yesenia.net",
+      password: "Suite 847",
+    },
+    {
+      email: "Julianne.OConner@kory.org",
+      password: "Apt. 692",
+    },
+  ]
 }
 
 /*
@@ -16,25 +33,21 @@ const initialState = {
 */
 const root = (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_USER':
-      return {
-        ...state,
-        user: action.payload
-      }
-    case 'SET_PASSWORD':
-      return {
-        ...state,
-        password: action.payload
-      }
+    
     case 'SET_JSON':
       return {
         ...state,
         users: action.payload
       }
-    case 'SET_CURRENTUSER':
+    case 'SET_LOGGEDUSER':
       return {
         ...state,
-        currentuser: action.payload
+        loggeduser: action.payload
+      }
+    case 'SET_NEWUSER':
+      return {
+        ...state,
+        newuser: action.payload
       }
       default:
       return state

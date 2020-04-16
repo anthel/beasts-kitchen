@@ -91,10 +91,10 @@ function showResults(res, props) {
   return res.results.map((item, i) => {
     
    
-    props.getIngredient(item.id)
+    /* props.getIngredient(item.id)
       .then(response => {
         
-      })
+      }) */
       return (
         <Card key={i}>
         <CardActionArea className={classes.SearchCardContainer}>

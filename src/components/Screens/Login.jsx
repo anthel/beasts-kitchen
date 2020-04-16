@@ -13,7 +13,8 @@ import SimpleReactValidator from 'simple-react-validator';
 import withStyles from '../HOCS/withStyles';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { setUser, setJson, setCurrent } from '../Redux/actions';
+import { setLoggedUser, setJson} from '../Redux/actions';
+import SavedRecipesScreen from './SavedRecipesScreen';
 
 function Copyright() {
   return (
@@ -37,29 +38,6 @@ class Login extends Component {
       email: '',
       password: '',
     };
-    this.JsonUsers();
-  }
-
-  JsonUsers = () => {
-    const users = [
-      {
-        email: "Sincere@april.biz",
-        password: "Apt. 556",
-      },
-      {
-        email: "Shanna@melissa.tv",
-        password: "Suite 879",
-      },
-      {
-        email: "Nathan@yesenia.net",
-        password: "Suite 847",
-      },
-      {
-        email: "Julianne.OConner@kory.org",
-        password: "Apt. 692",
-      },
-    ]
-    this.props.setJsonUsers(users);
   }
 
   handleInputs = (e) => {
@@ -72,7 +50,7 @@ class Login extends Component {
       for(let i=0;i < this.props.users.length;i++) {
         if(this.state.email === this.props.users[i].email
           && this.state.password === this.props.users[i].password) {
-            this.props.setCurrentUser(this.state.email);
+            this.props.setLoggedIn(true);
             this.props.history.push('/savedrecipes');
         }
       } 
@@ -84,93 +62,98 @@ class Login extends Component {
 
   render() {
     const { classes } = this.props;
-    return (
-      <Container className={classes.logInContainer} component="main" maxWidth="xs">
-        <CssBaseline /> 
-        <div className={classes.logInCard}>
-          <Avatar className={classes.logInAvatar}>
-          </Avatar>
-          <Typography className={classes.LogInTitle} component="h1" variant="h5">
-            Log in
-          </Typography>
-          <form className={classes.logInForm} noValidate>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  className={classes.LogInFormInput}
-                  value={this.state.email}
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={this.handleInputs}
-                />
-                {this.validator.message(
-                  'email', 
-                  this.state.email, 
-                  'required|email', 
-                  )}
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  className={classes.LogInFormInput}
-                  value={this.state.password}
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                  onChange={this.handleInputs}
-                />
-                {this.validator.message(
-                  'password', 
-                  this.state.password, 
-                  'required|min:8', 
-                )}
-              </Grid>
-            </Grid>
-            <Button
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.logInSubmit}
-              onClick={this.navigateToSavedRecipesScreen}
-            >
+
+    if(this.props.isLoggedIn === false) {
+      
+      return (
+        <Container className={classes.logInContainer} component="main" maxWidth="xs">
+          <CssBaseline /> 
+          <div className={classes.logInCard}>
+            <Avatar className={classes.logInAvatar}>
+            </Avatar>
+            <Typography className={classes.LogInTitle} component="h1" variant="h5">
               Log in
-            </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                <Link href="/register" variant="body2">
-                  You don't have an account? Register here!
-                </Link>
+            </Typography>
+            <form className={classes.logInForm} noValidate>
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <TextField
+                    className={classes.LogInFormInput}
+                    value={this.state.email}
+                    variant="outlined"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                    onChange={this.handleInputs}
+                  />
+                  {this.validator.message(
+                    'email', 
+                    this.state.email, 
+                    'required|email', 
+                    )}
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    className={classes.LogInFormInput}
+                    value={this.state.password}
+                    variant="outlined"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="current-password"
+                    onChange={this.handleInputs}
+                  />
+                  {this.validator.message(
+                    'password', 
+                    this.state.password, 
+                    'required|min:8', 
+                  )}
+                </Grid>
               </Grid>
-            </Grid>
-          </form>
-        </div>
-        <Box mt={5}>
-          <Copyright />
-        </Box>
-      </Container>
-    );
+              <Button
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.logInSubmit}
+                onClick={this.navigateToSavedRecipesScreen}
+              >
+                Log in
+              </Button>
+              <Grid container justify="flex-end">
+                <Grid item>
+                  <Link href="/register" variant="body2">
+                    You don't have an account? Register here!
+                  </Link>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+          <Box mt={5}>
+            <Copyright />
+          </Box>
+        </Container>
+      );
+    }
+    else {
+      return <SavedRecipesScreen/>
+    } 
   }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  user: state.root.user,
   users: state.root.users,
-  currentuser: state.root.currentuser
+  isLoggedIn: state.root.loggeduser
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  setNewUser: (user) => dispatch(setUser(user)),
+  setLoggedIn: (isLoggedIn) => dispatch(setLoggedUser(isLoggedIn)),
   setJsonUsers: (users) => dispatch(setJson(users)),
-  setCurrentUser: (currentuser) => dispatch(setCurrent(currentuser))
 })
 
 export default compose(
