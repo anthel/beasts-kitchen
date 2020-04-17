@@ -3,6 +3,13 @@ import React from 'react'
 import { Footer ,FooterSection} from 'react-mdl';
 import withStyles from './HOCS/withStyles';
 
+/**
+ * @description - Footer for the application. Contains fake information
+ * To make it seem like a real company footer.
+ * The icons are importet from googles fontawsome icons (CDN at index.html)
+ * @author - Karwan Gulnezer
+ */
+
 function FooterContent(props) {
   const { classes } = props;
 

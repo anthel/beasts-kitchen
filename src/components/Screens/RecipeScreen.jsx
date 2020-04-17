@@ -4,6 +4,15 @@ import { compose } from 'redux';
 import withApiRequests from '../HOCS/withApiRequests';
 import withStyles from '../HOCS/withStyles';
 
+/**
+ * @description - Recipe screen, here we use the history object to get our specific recipe and its properties
+ * We then map the object to get the properties we need and also map when creating (rendering)
+ * them. (to show the information one at a time, otherwise we get a block of text wich is not ideal.)
+ * The screen contains - A header image of the recipe chosen by the user.
+ * Ingredient list + Guide on how to cook/bake the recipe and also a Clock Icon to show the time it takes.
+ * @author - Karwan Gulnezer
+ */
+
 class RecipeScreen extends Component {
   constructor(props){
     super(props);

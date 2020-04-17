@@ -5,7 +5,12 @@ import withApiRequests from '../HOCS/withApiRequests';
 import { compose } from 'redux';
 
 /**
- * @desc - 
+ * @description - Component that creates 10 cards with 10 different images from the API 
+ * We also make the images clickable, when clicked the user gets redirected to the Recipescreen
+ * with the necessary parameters to get the right result.
+ * We also call a function from our APIHOC that fetches 10 random images, we then map the entire object with 4 
+ * different states inorder to get the specific property. Each state represents the specific property.
+ * @author - Karwan Gulnezer
  */
  class InspirationScreen extends Component {
   constructor(props){

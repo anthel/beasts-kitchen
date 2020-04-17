@@ -6,13 +6,12 @@ import Routers from './components/Routers';
 import NavigationBarMobile from './components/NavigationBarMobil';
 
 /**
- * @description - Layout for the navigation (for both mobile and webpage)
- * Links are the "buttons" on the page, "Drawer" is the hamburger navigation.
- * Content is where you call your other components for the application
+ * @description - We call our Router component and Navigation component here.
+ * 
  */
 function App() {
   return (
-    <div className="demo-big-content">
+    <div>
       <Routers />
       <NavigationBarMobile />
     </div>

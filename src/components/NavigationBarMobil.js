@@ -8,6 +8,14 @@ import { Link } from 'react-router-dom';
 
 import withStyles from './HOCS/withStyles';
 
+/**
+ * @description - Navigation bar at the bottom of the page on every screen.
+ * Icons and components are importet from Material UI.
+ * BottomNavigationAction expects a component that is a Link wich we import from react-router-dom 
+ * + a path for that link. This way we can navigation between screens. 
+ * @author - Karwan Gulnezer
+ */
+
 function NavigationBarMobile(props) {
   const { classes } = props;
   
