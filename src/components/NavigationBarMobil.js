@@ -5,13 +5,12 @@ import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import AccountBoxRoundedIcon from '@material-ui/icons/AccountBoxRounded';
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 import { Link } from 'react-router-dom';
+
 import withStyles from './HOCS/withStyles';
 
-
 function NavigationBarMobile(props) {
-
   const { classes } = props;
-
+  
   const [value, setValue] = React.useState('recents');
 
   const handleChange = (event, newValue) => {

@@ -3,19 +3,18 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
-import withStyles from '../HOCS/withStyles';
 import SimpleReactValidator from 'simple-react-validator';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+
 import {setJson} from '../Redux/actions';
+import withStyles from '../HOCS/withStyles';
 
 function Copyright() {
   return (
@@ -79,7 +78,6 @@ class SignUp extends React.Component {
                   value={firstName}
                   onChange={this.handleChange}
                 />
-
                 {this.validator.message('firstName', firstName, 'required|string|max:12')}
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -95,7 +93,6 @@ class SignUp extends React.Component {
                   value={lastName}
                   onChange={this.handleChange}
                 />
-
                 {this.validator.message('lname', lastName, 'required|string|max:15')}
               </Grid>
               <Grid item xs={12}>
@@ -128,8 +125,7 @@ class SignUp extends React.Component {
                   onChange={this.handleChange}
                 />
                 {this.validator.message('password', password, 'required|min:8')}
-              </Grid>
-              
+              </Grid> 
             </Grid>
             <Button
               type="submit"
@@ -139,7 +135,6 @@ class SignUp extends React.Component {
               className={classes.submit}
               onClick={(event) => {
                 if(this.validator.allValid()) {
-
                   const user = {
                     email: this.state.email,
                     password: this.state.password,
@@ -148,10 +143,9 @@ class SignUp extends React.Component {
 
                   this.props.setNewUser(newUsers);
                   this.props.history.push('/login');
-                }
-                else {
-                  this.validator.showMessages();
-                  this.forceUpdate();
+                } else {
+                    this.validator.showMessages();
+                    this.forceUpdate();
                 }
                 event.preventDefault();
               }}
@@ -175,7 +169,6 @@ class SignUp extends React.Component {
   }
 }
 
-
 const mapStateToProps = (state, ownProps) => ({
   users: state.root.users,
 })
@@ -187,4 +180,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default compose(
   withStyles,
   connect(mapStateToProps, mapDispatchToProps)
-  )(SignUp);
+)(SignUp);

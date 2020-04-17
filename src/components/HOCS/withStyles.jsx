@@ -1,5 +1,9 @@
 import { withStyles } from '@material-ui/core/styles';
 
+/**
+ * @desc - a styling HOC that includes all styling for the application.
+ * @author - Katalina, Karwan & Ante
+ */
 const styles = {
   //NavigationBar styling
   navBar: {
@@ -8,7 +12,7 @@ const styles = {
     bottom: 0
   },
 
-  // Search styling
+  //Search styling
   searchForm: {
     padding: '2px 4px',
   },
@@ -26,14 +30,13 @@ const styles = {
   SearchImage:{
     width: 150,
     height: 150,
-    
   },
   SearchTitle: {
     marginLeft: '20%',
     fontSize: 20
   },
 
-  // 4 different stylings for chips
+  // 4 different stylings for chips in Search Screen
   chipOne: {
     backgroundColor: 'rgba(79, 183, 0, 0.65)',
     color: 'white',
@@ -59,7 +62,6 @@ const styles = {
   },
 
   //CategoryScreen Styling
-
   cardsContainer: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -85,7 +87,7 @@ const styles = {
     opacity: '.8',
   },
 
-  // Home page
+  // Home Page
   homePageTitle: {
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
     fontWeight: 600
@@ -126,7 +128,7 @@ const styles = {
     marginTop: '-5px',
   },
 
-  //InspirationScreen
+  //Inspiration Screen
   inspirationContainer:{
     textAlign: 'center',
     marginBottom: 70,    
@@ -178,7 +180,6 @@ const styles = {
     justifyContent: 'center',
     textAlign: 'center',
   },
-  
   footerIcon: {
     padding: '10px',
     fontSize: '30px',
@@ -276,7 +277,7 @@ const styles = {
     cursor: 'pointer',
   },
 
-  //Recipe screen
+  //Recipe Screen
   recipeImg: {
     width: '100%',
   },

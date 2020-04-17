@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux'
 
+/**
+ * @desc - initial state in Redux
+ * @author - Ante & Katalina
+ */
 const initialState = {
   loggeduser: false,
   newuser: null,
@@ -23,17 +27,15 @@ const initialState = {
   ]
 }
 
-/*
-* Creating a reducer and naming it root
-* @Params
-*   state which has a default state
-*   action which is the action object
-*
-*   returns a new state depending on the action type and payload
-*/
+/**
+ * @desc - Creating a reducer called root,
+ * state with a default state,
+ * action which is the action object and returns
+ * a new state depending on the action type and payload.
+ * @author - Ante & Katalina 
+ */
 const root = (state = initialState, action) => {
   switch (action.type) {
-    
     case 'SET_JSON':
       return {
         ...state,
@@ -49,13 +51,12 @@ const root = (state = initialState, action) => {
         ...state,
         newuser: action.payload
       }
-      default:
+    default:
       return state
   }
 }
 
 export default combineReducers({
   root,
-  // Here you can add more reducers
 })
 
