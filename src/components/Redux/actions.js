@@ -3,17 +3,12 @@
  * payload depending on users, loggeduser and newuser accepted as params.
  * @author - Ante & Katalina
  */
-export const setJson = (users) => ({
-  type: 'SET_JSON',
+export const setUsers = (users) => ({
+  type: 'SET_USERS',
   payload: users
 })
 
 export const setLoggedUser = (loggeduser) => ({
   type: 'SET_LOGGEDUSER',
   payload: loggeduser
-})
-
-export const setNewUser = (newuser) => ({
-  type: 'SET_NEWUSER',
-  payload: newuser
 })

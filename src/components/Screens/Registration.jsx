@@ -1,4 +1,7 @@
 import React from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import SimpleReactValidator from 'simple-react-validator';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,11 +12,8 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import SimpleReactValidator from 'simple-react-validator';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
 
-import {setJson} from '../Redux/actions';
+import { setUsers } from '../Redux/actions';
 import withStyles from '../HOCS/withStyles';
 
 function Copyright() {
@@ -28,7 +28,11 @@ function Copyright() {
     </Typography>
   );
 }
-
+/**
+ * @desc Screen component responsible for rendering the registration screen. Creates a new user object based on 4 inputs from the user,
+ * and uses validation to check that the input is correct. New users are saved in Redux global state. Uses MUI HOC for styling.
+ * @author Ante Hellgren
+ */
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
@@ -174,7 +178,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  setNewUser: (users) => dispatch(setJson(users)),
+  setNewUser: (users) => dispatch(setUsers(users)),
 })
 
 export default compose(
