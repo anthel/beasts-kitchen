@@ -6,6 +6,7 @@ import { Card, CardActionArea } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Chip from '@material-ui/core/Chip';
+import PropTypes from 'prop-types';
 
 import withApiRequests from '../HOCS/withApiRequests';
 import withStyles from '../HOCS/withStyles';
@@ -92,6 +93,11 @@ function showResults(res, props) {
     );
   })
 }
+
+SearchScreen.propTypes = {
+  classes: PropTypes.object.isRequired,
+  getSearch: PropTypes.func.isRequired,
+};
 
 export default compose(
   withStyles,

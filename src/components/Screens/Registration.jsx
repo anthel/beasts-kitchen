@@ -12,6 +12,7 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import PropTypes from 'prop-types';
 
 import { setUsers } from '../Redux/actions';
 import withStyles from '../HOCS/withStyles';
@@ -180,6 +181,13 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   setNewUser: (users) => dispatch(setUsers(users)),
 })
+
+SignUp.propTypes = {
+  classes: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
+  users: PropTypes.array.isRequired,
+  setNewUser: PropTypes.func.isRequired,
+};
 
 export default compose(
   withStyles,

@@ -24,13 +24,7 @@ class CategoryScreen extends Component {
       cardsList.push(        
         <Card className={classes.CategoryCard} key={i}>
           <CardActionArea>
-            <img className={classes.CategoryImg}
-              src="https://www.uppsnappat.nu/wp-content/uploads/ugly-smile.jpg"
-              alt="food"
-            />
-            <div className={classes.CategoryOverlay}>
-              <p>Creamy Tooth ala vodka</p>
-            </div>
+            
           </CardActionArea>
         </Card>
       )

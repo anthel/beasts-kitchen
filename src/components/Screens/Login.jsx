@@ -11,6 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import PropTypes from 'prop-types';
 
 import { setLoggedUser } from '../Redux/actions';
 import SavedRecipesScreen from './SavedRecipesScreen';
@@ -167,6 +168,14 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   setLoggedIn: (isLoggedIn) => dispatch(setLoggedUser(isLoggedIn)),
 })
+
+Login.propTypes = {
+  classes: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
+  users: PropTypes.array.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
+  setLoggedIn: PropTypes.func.isRequired,
+};
 
 export default compose(
   withStyles,
