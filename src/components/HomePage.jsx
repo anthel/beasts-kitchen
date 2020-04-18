@@ -3,6 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
+import PropTypes from 'prop-types';
 
 import RandomCarousel from './RandomCarousel';
 import Weekly from './WeeklyTips';
@@ -79,6 +80,11 @@ class HomePage extends Component {
     )
   }
 } 
+
+HomePage.propTypes = {
+  classes: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
+};
 
 export default compose(
   withRouter,

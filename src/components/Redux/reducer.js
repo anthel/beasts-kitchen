@@ -6,7 +6,6 @@ import { combineReducers } from 'redux'
  */
 const initialState = {
   loggeduser: false,
-  newuser: null,
   users: [
     {
       email: "Sincere@april.biz",
@@ -36,7 +35,7 @@ const initialState = {
  */
 const root = (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_JSON':
+    case 'SET_USERS':
       return {
         ...state,
         users: action.payload
@@ -45,11 +44,6 @@ const root = (state = initialState, action) => {
       return {
         ...state,
         loggeduser: action.payload
-      }
-    case 'SET_NEWUSER':
-      return {
-        ...state,
-        newuser: action.payload
       }
     default:
       return state

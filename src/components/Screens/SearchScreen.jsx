@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from 'react';
+import { compose } from 'redux';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
-import { compose } from 'redux';
 import { Card, CardActionArea } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Chip from '@material-ui/core/Chip';
+import PropTypes from 'prop-types';
 
 import withApiRequests from '../HOCS/withApiRequests';
 import withStyles from '../HOCS/withStyles';
 
+/**
+ * @desc Screen component responsible for rendering the search screen, with functionality to take an input and use it to make an API
+ * request, and render the results on the screen.
+ * @param {*} props Takes styling and api calls from HOCS as props
+ * @author Ante Hellgren
+ */
 function SearchScreen(props) {
   const [inputValue, setInputValue] = useState('');
   const [searchResults, setSearchResults] = useState(null);
   const { classes } = props;
 
+  /**
+   * @desc Hook responsible for updating the component when the search request has returned the results, 
+   * so that the results are shown on screen without having to update the page.
+   */
   useEffect(() => { 
   }, [searchResults])
   
@@ -52,9 +63,9 @@ function SearchScreen(props) {
         <Chip label="Fish" component="a" href="/category" className={classes.chipFour} clickable />
         <Chip label="Friuts & Veggies" component="a" href="/category" className={classes.chipOne} clickable />
         <Chip label="Desserts" component="a" href="/category" className={classes.chipTwo} clickable />
-        <Chip label="Vegan Dogshit" component="a" href="/category" className={classes.chipThree} clickable />
+        <Chip label="Vegan" component="a" href="/category" className={classes.chipThree} clickable />
         <Chip label="Vegitarian" component="a" href="/category" className={classes.chipFour} clickable />
-        <Chip label="Taco Taco Taco" component="a" href="/category" className={classes.chipFour} clickable />
+        <Chip label="Taco" component="a" href="/category" className={classes.chipFour} clickable />
       </div>
       <hr className={classes.lineStyling} />
       <div>
@@ -82,6 +93,11 @@ function showResults(res, props) {
     );
   })
 }
+
+SearchScreen.propTypes = {
+  classes: PropTypes.object.isRequired,
+  getSearch: PropTypes.func.isRequired,
+};
 
 export default compose(
   withStyles,
